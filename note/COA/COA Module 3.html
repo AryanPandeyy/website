@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-14 Thu 13:47 -->
+<!-- 2022-04-14 Thu 14:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>COA Module 3</title>
@@ -223,40 +223,40 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc1a1842">1. Control Units</a>
+<li><a href="#orgdcf3942">1. Control Units</a>
 <ul>
-<li><a href="#org0716894">1.1. Hardwired Control Unit Design Methods</a>
+<li><a href="#org2d8bc46">1.1. Hardwired Control Unit Design Methods</a>
 <ul>
-<li><a href="#org248b22b">1.1.1. State Table Method</a></li>
-<li><a href="#org4465c5a">1.1.2. Delay Element Method</a></li>
-<li><a href="#org5ef30cf">1.1.3. Sequence Counter Method</a></li>
-<li><a href="#org6be5843">1.1.4. PLA Method</a></li>
+<li><a href="#orge519719">1.1.1. State Table Method</a></li>
+<li><a href="#orgd199f95">1.1.2. Delay Element Method</a></li>
+<li><a href="#org2243d7a">1.1.3. Sequence Counter Method</a></li>
+<li><a href="#orgb5c4120">1.1.4. PLA Method</a></li>
 </ul>
 </li>
-<li><a href="#org734cba7">1.2. Soft Wired Unit Design Methods</a></li>
+<li><a href="#orgeea108f">1.2. Soft Wired Unit Design Methods</a></li>
 </ul>
 </li>
-<li><a href="#orgfeca2a1">2. Nano Programming</a></li>
-<li><a href="#org740ea20">3. Flynn's Classification</a>
+<li><a href="#org127d556">2. Nano Programming</a></li>
+<li><a href="#org6df028e">3. Flynn's Classification</a>
 <ul>
-<li><a href="#orge1285ed">3.1. Single Instruction Single Data (SISD)</a></li>
-<li><a href="#orga0a984d">3.2. Single Instruction Multiple Data (SIMD)</a></li>
-<li><a href="#org1ff18c7">3.3. Multiple Instruction Single Data (MISD)</a></li>
-<li><a href="#org1be0f69">3.4. Multiple Instruction Multiple Data (MIMD)</a></li>
+<li><a href="#org5174068">3.1. Single Instruction Single Data (SISD)</a></li>
+<li><a href="#org9f4b745">3.2. Single Instruction Multiple Data (SIMD)</a></li>
+<li><a href="#orgbf089c9">3.3. Multiple Instruction Single Data (MISD)</a></li>
+<li><a href="#org90519da">3.4. Multiple Instruction Multiple Data (MIMD)</a></li>
 </ul>
 </li>
-<li><a href="#org5f8e61b">4. Instruction Pipeline</a>
+<li><a href="#orgf8438c4">4. Instruction Pipeline</a>
 <ul>
-<li><a href="#orga65b585">4.1. Unpipelined approach</a></li>
+<li><a href="#org33bdf83">4.1. Unpipelined approach</a></li>
 </ul>
 </li>
-<li><a href="#org4f6ed3e">5. Pipeline Hazards</a>
+<li><a href="#orgdf69bdb">5. Pipeline Hazards</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org16eaceb">5.0.1. Structural Hazards (Resource Conflicts)</a></li>
-<li><a href="#orgc5f8d03">5.0.2. Data Hazards (Data Dependency Conflicts)</a></li>
-<li><a href="#org503a084">5.0.3. Branch Difficulties (Control Hazards)</a></li>
+<li><a href="#org26505c0">5.0.1. Structural Hazards (Resource Conflicts)</a></li>
+<li><a href="#org35fd235">5.0.2. Data Hazards (Data Dependency Conflicts)</a></li>
+<li><a href="#org555fa14">5.0.3. Branch Difficulties (Control Hazards)</a></li>
 </ul>
 </li>
 </ul>
@@ -264,12 +264,12 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc1a1842" class="outline-2">
-<h2 id="orgc1a1842"><span class="section-number-2">1.</span> Control Units</h2>
+<div id="outline-container-orgdcf3942" class="outline-2">
+<h2 id="orgdcf3942"><span class="section-number-2">1.</span> Control Units</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org0716894" class="outline-3">
-<h3 id="org0716894"><span class="section-number-3">1.1.</span> Hardwired Control Unit Design Methods</h3>
+<div id="outline-container-org2d8bc46" class="outline-3">
+<h3 id="org2d8bc46"><span class="section-number-3">1.1.</span> Hardwired Control Unit Design Methods</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>Combinational logic ciruits</li>
@@ -286,15 +286,15 @@
 <li>Use in <a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">RISC Designs</a></li>
 <li>Methods to implement hardwired control unit:
 <ol class="org-ol">
-<li><a href="#org248b22b">State Table Method</a></li>
-<li><a href="#org4465c5a">Delay Element Method</a></li>
-<li><a href="#org5ef30cf">Sequence Counter Method</a></li>
-<li><a href="#org6be5843">PLA Method</a></li>
+<li><a href="#orge519719">State Table Method</a></li>
+<li><a href="#orgd199f95">Delay Element Method</a></li>
+<li><a href="#org2243d7a">Sequence Counter Method</a></li>
+<li><a href="#orgb5c4120">PLA Method</a></li>
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-org248b22b" class="outline-4">
-<h4 id="org248b22b"><span class="section-number-4">1.1.1.</span> State Table Method</h4>
+<div id="outline-container-orge519719" class="outline-4">
+<h4 id="orge519719"><span class="section-number-4">1.1.1.</span> State Table Method</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>State table is combine to form a instruction</li>
@@ -303,8 +303,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org4465c5a" class="outline-4">
-<h4 id="org4465c5a"><span class="section-number-4">1.1.2.</span> Delay Element Method</h4>
+<div id="outline-container-orgd199f95" class="outline-4">
+<h4 id="orgd199f95"><span class="section-number-4">1.1.2.</span> Delay Element Method</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li>Implemented using delay element i.e. D-flipflops</li>
@@ -313,8 +313,8 @@ and output is used to generate control signals.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5ef30cf" class="outline-4">
-<h4 id="org5ef30cf"><span class="section-number-4">1.1.3.</span> Sequence Counter Method</h4>
+<div id="outline-container-org2243d7a" class="outline-4">
+<h4 id="org2243d7a"><span class="section-number-4">1.1.3.</span> Sequence Counter Method</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li>Counter keeps on incrementing and generating diff counts.</li>
@@ -323,8 +323,8 @@ and output is used to generate control signals.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6be5843" class="outline-4">
-<h4 id="org6be5843"><span class="section-number-4">1.1.4.</span> PLA Method</h4>
+<div id="outline-container-orgb5c4120" class="outline-4">
+<h4 id="orgb5c4120"><span class="section-number-4">1.1.4.</span> PLA Method</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <ul class="org-ul">
 <li>Programmable Logic Array</li>
@@ -333,8 +333,8 @@ and output is used to generate control signals.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org734cba7" class="outline-3">
-<h3 id="org734cba7"><span class="section-number-3">1.2.</span> Soft Wired Unit Design Methods</h3>
+<div id="outline-container-orgeea108f" class="outline-3">
+<h3 id="orgeea108f"><span class="section-number-3">1.2.</span> Soft Wired Unit Design Methods</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>Micro programmed control unit generates control signals
@@ -346,12 +346,12 @@ decoded and then given to the individual components.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfeca2a1" class="outline-2">
-<h2 id="orgfeca2a1"><span class="section-number-2">2.</span> Nano Programming</h2>
+<div id="outline-container-org127d556" class="outline-2">
+<h2 id="org127d556"><span class="section-number-2">2.</span> Nano Programming</h2>
 <div class="outline-text-2" id="text-2">
 
-<div id="org5074979" class="figure">
-<p><img src="../../img/1649924110.jpg" alt="1649924110.jpg" />
+<div id="org1704248" class="figure">
+<p><img src="../../img/get-user.png" alt="get-user.png" />
 </p>
 </div>
 <ul class="org-ul">
@@ -361,23 +361,23 @@ decoded and then given to the individual components.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org740ea20" class="outline-2">
-<h2 id="org740ea20"><span class="section-number-2">3.</span> Flynn's Classification</h2>
+<div id="outline-container-org6df028e" class="outline-2">
+<h2 id="org6df028e"><span class="section-number-2">3.</span> Flynn's Classification</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Classification based on no. of Instruction Streams (IS)
 and Data Streams (DS) in the system.</li>
 <li>Parallel processing intro four categories:
 <ol class="org-ol">
-<li><a href="#orge1285ed">Single Instruction Single Data (SISD)</a></li>
-<li><a href="#orga0a984d">Single Instruction Multiple Data (SIMD)</a></li>
-<li><a href="#org1ff18c7">Multiple Instruction Single Data (MISD)</a></li>
-<li><a href="#org1be0f69">Multiple Instruction Multiple Data (MIMD)</a></li>
+<li><a href="#org5174068">Single Instruction Single Data (SISD)</a></li>
+<li><a href="#org9f4b745">Single Instruction Multiple Data (SIMD)</a></li>
+<li><a href="#orgbf089c9">Multiple Instruction Single Data (MISD)</a></li>
+<li><a href="#org90519da">Multiple Instruction Multiple Data (MIMD)</a></li>
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-orge1285ed" class="outline-3">
-<h3 id="orge1285ed"><span class="section-number-3">3.1.</span> Single Instruction Single Data (SISD)</h3>
+<div id="outline-container-org5174068" class="outline-3">
+<h3 id="org5174068"><span class="section-number-3">3.1.</span> Single Instruction Single Data (SISD)</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>Single processor that executes one instruction
@@ -385,8 +385,8 @@ at a time on single data stored in the memory.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga0a984d" class="outline-3">
-<h3 id="orga0a984d"><span class="section-number-3">3.2.</span> Single Instruction Multiple Data (SIMD)</h3>
+<div id="outline-container-org9f4b745" class="outline-3">
+<h3 id="org9f4b745"><span class="section-number-3">3.2.</span> Single Instruction Multiple Data (SIMD)</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>Same instruction is given to multiple
@@ -394,8 +394,8 @@ processing elements, but diff data.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1ff18c7" class="outline-3">
-<h3 id="org1ff18c7"><span class="section-number-3">3.3.</span> Multiple Instruction Single Data (MISD)</h3>
+<div id="outline-container-orgbf089c9" class="outline-3">
+<h3 id="orgbf089c9"><span class="section-number-3">3.3.</span> Multiple Instruction Single Data (MISD)</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>Multiple Instruction streams and hence multiple
@@ -405,8 +405,8 @@ the diff memory module in the same memory.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1be0f69" class="outline-3">
-<h3 id="org1be0f69"><span class="section-number-3">3.4.</span> Multiple Instruction Multiple Data (MIMD)</h3>
+<div id="outline-container-org90519da" class="outline-3">
+<h3 id="org90519da"><span class="section-number-3">3.4.</span> Multiple Instruction Multiple Data (MIMD)</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>Each processing element is having a diff set</li>
@@ -415,8 +415,8 @@ the diff memory module in the same memory.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org5f8e61b" class="outline-2">
-<h2 id="org5f8e61b"><span class="section-number-2">4.</span> Instruction Pipeline</h2>
+<div id="outline-container-orgf8438c4" class="outline-2">
+<h2 id="orgf8438c4"><span class="section-number-2">4.</span> Instruction Pipeline</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Technique for overlapping the execution of several instructions to reduce
@@ -433,8 +433,8 @@ In a pipelined processor,
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orga65b585" class="outline-3">
-<h3 id="orga65b585"><span class="section-number-3">4.1.</span> Unpipelined approach</h3>
+<div id="outline-container-org33bdf83" class="outline-3">
+<h3 id="org33bdf83"><span class="section-number-3">4.1.</span> Unpipelined approach</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>Processor fetches an instruction from memory.</li>
@@ -450,8 +450,8 @@ In a pipelined processor,
 </div>
 </div>
 </div>
-<div id="outline-container-org4f6ed3e" class="outline-2">
-<h2 id="org4f6ed3e"><span class="section-number-2">5.</span> Pipeline Hazards</h2>
+<div id="outline-container-orgdf69bdb" class="outline-2">
+<h2 id="orgdf69bdb"><span class="section-number-2">5.</span> Pipeline Hazards</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Pipelining increase processor performance  by incres. instruction</li>
@@ -459,14 +459,14 @@ In a pipelined processor,
 instruction executes.</li>
 <li>Type of conflicts
 <ol class="org-ol">
-<li><a href="#org16eaceb">Structural Hazards (Resource Conflicts)</a></li>
-<li><a href="#orgc5f8d03">Data Hazards (Data Dependency Conflicts)</a></li>
-<li><a href="#org503a084">Branch Difficulties (Control Hazards)</a></li>
+<li><a href="#org26505c0">Structural Hazards (Resource Conflicts)</a></li>
+<li><a href="#org35fd235">Data Hazards (Data Dependency Conflicts)</a></li>
+<li><a href="#org555fa14">Branch Difficulties (Control Hazards)</a></li>
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-org16eaceb" class="outline-4">
-<h4 id="org16eaceb"><span class="section-number-4">5.0.1.</span> Structural Hazards (Resource Conflicts)</h4>
+<div id="outline-container-org26505c0" class="outline-4">
+<h4 id="org26505c0"><span class="section-number-4">5.0.1.</span> Structural Hazards (Resource Conflicts)</h4>
 <div class="outline-text-4" id="text-5-0-1">
 <ul class="org-ul">
 <li>Caused by access to memory by two instructions at the same time.</li>
@@ -475,8 +475,8 @@ instruction executes.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc5f8d03" class="outline-4">
-<h4 id="orgc5f8d03"><span class="section-number-4">5.0.2.</span> Data Hazards (Data Dependency Conflicts)</h4>
+<div id="outline-container-org35fd235" class="outline-4">
+<h4 id="org35fd235"><span class="section-number-4">5.0.2.</span> Data Hazards (Data Dependency Conflicts)</h4>
 <div class="outline-text-4" id="text-5-0-2">
 <ul class="org-ul">
 <li>Caused when an instruction depends on the result of a prev instruction,
@@ -484,8 +484,8 @@ but this result is not yet avail.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org503a084" class="outline-4">
-<h4 id="org503a084"><span class="section-number-4">5.0.3.</span> Branch Difficulties (Control Hazards)</h4>
+<div id="outline-container-org555fa14" class="outline-4">
+<h4 id="org555fa14"><span class="section-number-4">5.0.3.</span> Branch Difficulties (Control Hazards)</h4>
 <div class="outline-text-4" id="text-5-0-3">
 <ul class="org-ul">
 <li>To Be Edited.</li>
@@ -496,7 +496,7 @@ but this result is not yet avail.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-04-14 Thu 13:47</p>
+<p class="date">Created: 2022-04-14 Thu 14:06</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

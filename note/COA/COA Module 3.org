@@ -38,6 +38,7 @@
 - These control signals are given to microinstructions register,
   decoded and then given to the individual components.
 * Nano Programming
+[[../../img/get-user.png]]
 - Microprogram memory contains pointers to the actual microinstructions.
 - Microinstructions register points to the nanoinstruction memory.
 - Nanoinstruction memory contains actual mico-instruction.
