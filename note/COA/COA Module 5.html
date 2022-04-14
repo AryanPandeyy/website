@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-14 Thu 10:32 -->
+<!-- 2022-04-14 Thu 12:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>COA Module 5</title>
@@ -194,6 +194,27 @@
   .org-svg { width: 90%; }
 </style>
 <link rel="stylesheet" type="text/css" href="../../worg.css"/>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content" class="content">
@@ -202,17 +223,198 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org77cac41">1. Cache Coherency</a></li>
+<li><a href="#org6ed1d90">1. Cache Consistency (aka Cache Coherency)</a>
+<ul>
+<li><a href="#org5818b31">1.1. Causes of Cache Consistency problems</a></li>
+</ul>
+</li>
+<li><a href="#org4aea7e9">2. Interleaved and Associative Memory</a>
+<ul>
+<li><a href="#orgfe5fa89">2.1. Associative Memory</a></li>
+<li><a href="#orga8e7a62">2.2. Interleaved Memory</a></li>
+</ul>
+</li>
+<li><a href="#orge958bfa">3. Types of RAM and ROM</a>
+<ul>
+<li><a href="#orgf4e7db2">3.1. RAM</a>
+<ul>
+<li><a href="#org0be256b">3.1.1. DRAM</a></li>
+<li><a href="#org411ac5b">3.1.2. SRAM</a></li>
+</ul>
+</li>
+<li><a href="#org699967e">3.2. ROM</a>
+<ul>
+<li><a href="#orgbc84512">3.2.1. PROM</a></li>
+<li><a href="#orgc8977e8">3.2.2. EPROM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org47ba2ad">4. Allocation Policies</a>
+<ul>
+<li><a href="#orge95ffad">4.1. Best Fit</a></li>
+<li><a href="#orgf64ebc0">4.2. Worst Fit</a></li>
+<li><a href="#org53d55e8">4.3. Next Fit</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org77cac41" class="outline-2">
-<h2 id="org77cac41"><span class="section-number-2">1.</span> Cache Coherency</h2>
+<div id="outline-container-org6ed1d90" class="outline-2">
+<h2 id="org6ed1d90"><span class="section-number-2">1.</span> Cache Consistency (aka Cache Coherency)</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>For higher performance in a multiprocessor system, each processor will usually have its own cache.</li>
+<li>Cache coherence refers to the problem of keeping the data in these caches consistent.</li>
+</ul>
+</div>
+<div id="outline-container-org5818b31" class="outline-3">
+<h3 id="org5818b31"><span class="section-number-3">1.1.</span> Causes of Cache Consistency problems</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Copy of line in cache &ne; Copy of line in memory, there is loss of
+cache consistency.
+<ul class="org-ul">
+<li>Cause can be updated in memory line but not in cache
+or updated in cache but not in memory</li>
+</ul></li>
+<li>Due to some other bus master changing the data in memory.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4aea7e9" class="outline-2">
+<h2 id="org4aea7e9"><span class="section-number-2">2.</span> Interleaved and Associative Memory</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgfe5fa89" class="outline-3">
+<h3 id="orgfe5fa89"><span class="section-number-3">2.1.</span> Associative Memory</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Any stored item can be accessed by using the content of item.</li>
+<li>Item stored in associative memory can be viewed having two field
+\[KEY,DATA\]</li>
+<li>Where <b>KEY</b> is the stored address and <b>DATA</b> is the information to be accessed.</li>
+<li>Associative searching is based on simultaneous matching of the key to be searched
+with the stored key associated with each line of data.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga8e7a62" class="outline-3">
+<h3 id="orga8e7a62"><span class="section-number-3">2.2.</span> Interleaved Memory</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge958bfa" class="outline-2">
+<h2 id="orge958bfa"><span class="section-number-2">3.</span> Types of RAM and ROM</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgf4e7db2" class="outline-3">
+<h3 id="orgf4e7db2"><span class="section-number-3">3.1.</span> RAM</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>RAM (Random Access Memory) is called so any memory location in this IC can be accessed randomly.</li>
+<li>Two types of RAM: SRAM (Static RAM) and DRAM (Dynamic RAM)</li>
+</ul>
+</div>
+<div id="outline-container-org0be256b" class="outline-4">
+<h4 id="org0be256b"><span class="section-number-4">3.1.1.</span> DRAM</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>DRAM is made of capacitors</li>
+<li>Requires less number of components to make one bit cell, hence require less space on silicon wafer.</li>
+<li>Comparatively cheaper.</li>
+<li>Slower than SRAM, because capacitors require time for charging and discharging.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org411ac5b" class="outline-4">
+<h4 id="org411ac5b"><span class="section-number-4">3.1.2.</span> SRAM</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>SRAM is made up of flip flops</li>
+<li>Each cell is made of flip flops</li>
+<li>Requires more components than DRAM</li>
+<li>Requires more space on silicon wafer and costlier.</li>
+<li>Fast compare to DRAM</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org699967e" class="outline-3">
+<h3 id="org699967e"><span class="section-number-3">3.2.</span> ROM</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>ROM is a memory where user cannot write anything.</li>
+<li>The data to be stored in ROM is written by ROM manufracturer.</li>
+</ul>
+</div>
+<div id="outline-container-orgbc84512" class="outline-4">
+<h4 id="orgbc84512"><span class="section-number-4">3.2.1.</span> PROM</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>PROM (Programmable Read Only Memory) aka OTP (One Time Programmable) coz it can be written only one time.</li>
+<li>When manufractured it is blank, once written on it, it cannot be re-written.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc8977e8" class="outline-4">
+<h4 id="orgc8977e8"><span class="section-number-4">3.2.2.</span> EPROM</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ul class="org-ul">
+<li>EPROM (Erasble Programmable Read Only Memory) now its replaced by EEPROM.</li>
+<li>The data written can be erased by keeping the EPROM IC in the UV box.</li>
+<li>EEPROM are erased by giving an extra supply voltage.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org47ba2ad" class="outline-2">
+<h2 id="org47ba2ad"><span class="section-number-2">4.</span> Allocation Policies</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>3 Memory Allocation Policies:
+<ol class="org-ol">
+<li><a href="#orge95ffad">Best Fit</a></li>
+<li><a href="#orgf64ebc0">Worst Fit</a></li>
+<li><a href="#org53d55e8">Next Fit</a></li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-orge95ffad" class="outline-3">
+<h3 id="orge95ffad"><span class="section-number-3">4.1.</span> Best Fit</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Smallest avail fragment is searched and the required data is stored in that fragment.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf64ebc0" class="outline-3">
+<h3 id="orgf64ebc0"><span class="section-number-3">4.2.</span> Worst Fit</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>The largest avail block is used to store the data.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org53d55e8" class="outline-3">
+<h3 id="org53d55e8"><span class="section-number-3">4.3.</span> Next Fit</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Immediate next empty block of a size equal or greater than data to be stored.</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-04-14 Thu 10:32</p>
+<p class="date">Created: 2022-04-14 Thu 12:16</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
