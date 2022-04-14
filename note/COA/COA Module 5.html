@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-13 Wed 21:10 -->
+<!-- 2022-04-14 Thu 10:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>COA Module 5</title>
 <meta name="author" content="Aryan Pandey" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -193,195 +193,26 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
 </style>
-<link rel="stylesheet" type="text/css" href="./worg.css"/>
+<link rel="stylesheet" type="text/css" href="../../worg.css"/>
 </head>
 <body>
 <div id="content" class="content">
+<h1 class="title">COA Module 5</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org859f9a1">1. Control Units</a>
-<ul>
-<li><a href="#orgcf039e2">1.1. Hardwired Control Unit Design Methods</a>
-<ul>
-<li><a href="#org050db36">1.1.1. State Table Method</a></li>
-<li><a href="#orge6d9b57">1.1.2. Delay Element Method</a></li>
-<li><a href="#orge768feb">1.1.3. Sequence Counter Method</a></li>
-<li><a href="#orgd4f5fae">1.1.4. PLA Method</a></li>
-</ul>
-</li>
-<li><a href="#orgb3aee45">1.2. Soft Wired Unit Design Methods</a></li>
-</ul>
-</li>
-<li><a href="#orge6c675b">2. Nano Programming</a></li>
-<li><a href="#org1a2e3a2">3. Flynn's Classification</a>
-<ul>
-<li><a href="#org039aa24">3.1. Single Instruction Single Data (SISD)</a></li>
-<li><a href="#org197d8f4">3.2. Single Instruction Multiple Data (SIMD)</a></li>
-<li><a href="#org6afae95">3.3. Multiple Instruction Single Data (MISD)</a></li>
-<li><a href="#org497041c">3.4. Multiple Instruction Multiple Data (MIMD)</a></li>
-</ul>
-</li>
-<li><a href="#org348b27d">4. Pipeline Hazards</a></li>
+<li><a href="#org77cac41">1. Cache Coherency</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org859f9a1" class="outline-2">
-<h2 id="org859f9a1"><span class="section-number-2">1.</span> Control Units</h2>
-<div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-orgcf039e2" class="outline-3">
-<h3 id="orgcf039e2"><span class="section-number-3">1.1.</span> Hardwired Control Unit Design Methods</h3>
-<div class="outline-text-3" id="text-1-1">
-<ul class="org-ul">
-<li>Combinational logic ciruits</li>
-<li>Generate a set of fixed sequences of control signals</li>
-<li>Advantages
-<ul class="org-ul">
-<li>Higher speed of operation</li>
-<li>Smaller space req on silicon wafer i.e. IC</li>
-</ul></li>
-<li>Disadvantages
-<ul class="org-ul">
-<li>Modification to the design are difficult</li>
-</ul></li>
-<li>Use in <a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">RISC Designs</a></li>
-<li>Methods to implement hardwired control unit:
-<ol class="org-ol">
-<li><a href="#org050db36">State Table Method</a></li>
-<li><a href="#orge6d9b57">Delay Element Method</a></li>
-<li><a href="#orge768feb">Sequence Counter Method</a></li>
-<li><a href="#orgd4f5fae">PLA Method</a></li>
-</ol></li>
-</ul>
-</div>
-<div id="outline-container-org050db36" class="outline-4">
-<h4 id="org050db36"><span class="section-number-4">1.1.1.</span> State Table Method</h4>
-<div class="outline-text-4" id="text-1-1-1">
-<ul class="org-ul">
-<li>State table is combine to form a instruction</li>
-<li>All instruction are considered as inputs</li>
-<li>Each State with a set of microinstructions to be issued</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orge6d9b57" class="outline-4">
-<h4 id="orge6d9b57"><span class="section-number-4">1.1.2.</span> Delay Element Method</h4>
-<div class="outline-text-4" id="text-1-1-2">
-<ul class="org-ul">
-<li>Implemented using delay element i.e. D-flipflops</li>
-<li>A flipflop give output logic '1' after specific event (t-state)
-and output is used to generate control signals.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orge768feb" class="outline-4">
-<h4 id="orge768feb"><span class="section-number-4">1.1.3.</span> Sequence Counter Method</h4>
-<div class="outline-text-4" id="text-1-1-3">
-<ul class="org-ul">
-<li>Counter keeps on incrementing and generating diff counts.</li>
-<li>Counts are decoded using decoder</li>
-<li>And the output is used as control signals</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgd4f5fae" class="outline-4">
-<h4 id="orgd4f5fae"><span class="section-number-4">1.1.4.</span> PLA Method</h4>
-<div class="outline-text-4" id="text-1-1-4">
-<ul class="org-ul">
-<li>Programmable Logic Array</li>
-<li>PLA is an array of AND gates as input and the OR gates as output.</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orgb3aee45" class="outline-3">
-<h3 id="orgb3aee45"><span class="section-number-3">1.2.</span> Soft Wired Unit Design Methods</h3>
-<div class="outline-text-3" id="text-1-2">
-<ul class="org-ul">
-<li>Micro programmed control unit generates control signals
-based on microinstructions stored in control memory.</li>
-<li>Each instruction loads the control signals in control register.</li>
-<li>These control signals are given to microinstructions register,
-decoded and then given to the individual components.</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orge6c675b" class="outline-2">
-<h2 id="orge6c675b"><span class="section-number-2">2.</span> Nano Programming</h2>
-<div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>Microprogram memory contains pointers to the actual microinstructions.</li>
-<li>Microinstructions register points to the nanoinstruction memory.</li>
-<li>Nanoinstruction memory contains actual mico-instruction.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org1a2e3a2" class="outline-2">
-<h2 id="org1a2e3a2"><span class="section-number-2">3.</span> Flynn's Classification</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li>Classification based on no. of Instruction Streams (IS)
-and Data Streams (DS) in the system.</li>
-<li>Parallel processing intro four categories:
-<ol class="org-ol">
-<li><a href="#org039aa24">Single Instruction Single Data (SISD)</a></li>
-<li><a href="#org197d8f4">Single Instruction Multiple Data (SIMD)</a></li>
-<li><a href="#org6afae95">Multiple Instruction Single Data (MISD)</a></li>
-<li><a href="#org497041c">Multiple Instruction Multiple Data (MIMD)</a></li>
-</ol></li>
-</ul>
-</div>
-<div id="outline-container-org039aa24" class="outline-3">
-<h3 id="org039aa24"><span class="section-number-3">3.1.</span> Single Instruction Single Data (SISD)</h3>
-<div class="outline-text-3" id="text-3-1">
-<ul class="org-ul">
-<li>Single processor that executes one instruction
-at a time on single data stored in the memory.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org197d8f4" class="outline-3">
-<h3 id="org197d8f4"><span class="section-number-3">3.2.</span> Single Instruction Multiple Data (SIMD)</h3>
-<div class="outline-text-3" id="text-3-2">
-<ul class="org-ul">
-<li>Same instruction is given to multiple
-processing elements, but diff data.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org6afae95" class="outline-3">
-<h3 id="org6afae95"><span class="section-number-3">3.3.</span> Multiple Instruction Single Data (MISD)</h3>
-<div class="outline-text-3" id="text-3-3">
-<ul class="org-ul">
-<li>Multiple Instruction streams and hence multiple
-control units to decode these instructions.</li>
-<li>Each control unit takes a diff instruction from
-the diff memory module in the same memory.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org497041c" class="outline-3">
-<h3 id="org497041c"><span class="section-number-3">3.4.</span> Multiple Instruction Multiple Data (MIMD)</h3>
-<div class="outline-text-3" id="text-3-4">
-<ul class="org-ul">
-<li>Each processing element is having a diff set</li>
-<li>of data and diff instruction.</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org348b27d" class="outline-2">
-<h2 id="org348b27d"><span class="section-number-2">4.</span> Pipeline Hazards</h2>
-<div class="outline-text-2" id="text-4">
-</div>
+<div id="outline-container-org77cac41" class="outline-2">
+<h2 id="org77cac41"><span class="section-number-2">1.</span> Cache Coherency</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-04-13 Wed 21:10</p>
+<p class="date">Created: 2022-04-14 Thu 10:32</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
