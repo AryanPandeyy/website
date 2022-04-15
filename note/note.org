@@ -3,3 +3,7 @@
 * COA
 ** [[../note/COA/COA Module 3.html][Module 3]]
 ** [[../note/COA/COA Module 5.html][Module 5]]
+* MATH
+** Probability Disturbution
+*** [[./MATH/PD.org][Poisson Disturbution]]
+*** [[./MATH/ND.html][Normal Disturbution]]
