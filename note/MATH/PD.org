@@ -1,0 +1,43 @@
+#+AUTHOR: Aryan Pandey
+#+TITLE: Poisson Distribution
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
+* Poisson Distribution
+** Formula
+\begin{equation}
+P(x) = e^{-m}\frac{m^x}{x!} .... x=0,1,2,..\infty
+\end{equation}
+** Mean and Variance
+*** Mean
+\begin{equation}
+Mean = m
+\end{equation}
+\begin{equation}
+\nonumber
+m=nP
+\end{equation}
+*** Variance
+\begin{equation}
+\sigma^{2}=m
+\end{equation}
+\begin{equation}
+\nonumber
+\sigma= \sqrt{m}
+\end{equation}
+** Recurrence Relation
+\begin{equation}
+P(x+1)=P(x)\frac{m}{x+1}
+\end{equation}
+** Eqn
+- Atleast one defective
+  \begin{equation}
+  P(X\geq4)=1-P(X<4)
+  \end{equation}
+  \begin{equation}
+  \nonumber
+  \therefore P(X\geq4)=1-[P(x=1)+P(x=2)+P(x=3)]
+  \end{equation}
+- Two n's are given, then take one as 'n' and other as 'N'
+** Fitting of poisson distribution
+\begin{equation}
+mean=\frac{\Sigma{fx}}{\Sigma{f}} .. x=data, f=frquency
+\end{equation}

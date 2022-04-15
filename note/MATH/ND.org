@@ -1,0 +1,22 @@
+#+AUTHOR: Aryan Pandey
+#+TITLE: Normal Distribution
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
+* Normal Distribution
+** Formula
+\begin{equation}
+f(x)=e^{{-\frac{1}{2}}\big({\frac{x-m}{\sigma}}\big)^{2}}\frac{1}{\sqrt{2\pi}\sigma}
+\end{equation}
+- If X is a normal variate with parameter m,\sigma,then
+  \begin{equation}
+  Z=\frac{X-m}{\sigma}
+  \end{equation}
+  is also a normal variate with mean = 0 and standard deviation = 1.
+** Mean and Variance
+*** Mean
+\begin{equation}
+Mean=m
+\end{equation}
+*** Variance
+\begin{equation}
+Variance=\sigma^{2}
+\end{equation}
