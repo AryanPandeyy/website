@@ -20,3 +20,11 @@ Mean=m
 \begin{equation}
 Variance=\sigma^{2}
 \end{equation}
+\begin{equation}
+\nonumber
+\sigma=\sqrt{npq}
+\end{equation}
+\begin{equation}
+\nonumber
+q=1-p
+\end{equation}
