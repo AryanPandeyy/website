@@ -1,0 +1,62 @@
+#+AUTHOR: Aryan Pandey
+#+TITLE: Nonlinear Programming
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
+* NLPP with one equality constraint (two or three variables) using the method of Lagrange’s multipliers
+\begin{equation}
+h = constraint
+\end{equation}
+\begin{equation}
+L(x_{1},x_{2},\lambda) = optimal - \lambda(constraint)
+\end{equation}
+\begin{equation}
+\Delta = \begin{vmatrix}
+0 & {\frac{\mathrm \partial h}{\mathrm \partial x_{1}}}& {\frac{\mathrm \partial h}{\mathrm \partial x_{2}}} \\
+{\frac{\mathrm \partial h}{\mathrm \partial x_{1}}} & {\frac{\mathrm \partial^2 L}{\mathrm \partial x_{1}^2}} & {\frac{\mathrm \partial^2 L}{\mathrm \partial x_{1} \partial x_{2}}} \\
+{\frac{\mathrm \partial h}{\mathrm \partial x_{2}}} & {\frac{\mathrm \partial^2 L}{\mathrm \partial x_{1} \partial x_{2}}} & {\frac{\mathrm \partial^2 L}{\mathrm \partial x_{2}^2}}
+\end{vmatrix}
+\end{equation}
+- \Delta -> positive then maxima
+- \Delta -> negative then minima
+* Kuhn-Tucker with inequality constraint
+** Kuhn-Tucker conditions
+\begin{equation}
+\frac{\mathrm \partial L}{\mathrm \partial x_{1}} = 0
+\end{equation}
+\begin{equation}
+\frac{\mathrm \partial L}{\mathrm \partial x_{2}} = 0
+\end{equation}
+\begin{equation}
+\lambda(h)=0
+\end{equation}
+\begin{equation}
+h\leq0
+\end{equation}
+\begin{equation}
+x_1,x_2\geq0
+\end{equation}
+\begin{equation}
+\lambda\geq0
+\end{equation}
+** Eqn
+\begin{equation}
+L(x_1,x_2,\lambda)=optimal-\lambda(constraint) \\
+h=constraint \\
+\frac{\mathrm \partial L}{\mathrm \partial x_1} = 0 => someeqn(1) \\
+\frac{\mathrm \partial L}{\mathrm \partial x_2} = 0 => someeqn(2) \\
+\lambda(h)=0=>\lambda(constraint) ..someeqn(3) \\
+h\leq0=>constraint\leq0 ..someeqn(4)
+\end{equation}
+*** Case i) \lambda=0
+- put in someeqn(1) & someeqn(2)
+- x_1 = & x_2 = 
+- put it in someeqn(4) & someeqn(5)
+  - if they satisfiy both the eqn then its right and put x_1 and x_2 in Z
+  - if not then go for case ii)
+*** Case ii) \lambda\neq0
+- from someeqn(3) then
+  \begin{equation}
+  h = 0 .. someeqn(4)
+  \end{equation}
+- solve someeqn(1),(2),(4)
+- x_1 = x_2= \lambda=
+* TODO NLPP with two equality constraints
