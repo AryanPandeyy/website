@@ -3,34 +3,37 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
 * Control Units
 ** Hardwired Control Unit Design Methods
-- Combinational logic ciruits
-- Generate a set of fixed sequences of control signals
+- Combinational logic ciruits.
+- Generate a set of fixed sequences of control signals.
 - Advantages
-  - Higher speed of operation
-  - Smaller space req on silicon wafer i.e. IC
+  - Higher speed of operation.
+  - Smaller space req on silicon wafer i.e. IC.
 - Disadvantages
-  - Modification to the design are difficult
-- Use in [[https://en.wikipedia.org/wiki/Reduced_instruction_set_computer][RISC Designs]]
+  - Modification to the design are difficult.
+- Use in [[https://en.wikipedia.org/wiki/Reduced_instruction_set_computer][RISC Designs]].
 - Methods to implement hardwired control unit:
   1. [[*State Table Method][State Table Method]]
   2. [[*Delay Element Method][Delay Element Method]]
   3. [[*Sequence Counter Method][Sequence Counter Method]]
   4. [[*PLA Method][PLA Method]]
 *** State Table Method
-- State table is combine to form a instruction
-- All instruction are considered as inputs
-- Each State with a set of microinstructions to be issued
+- State table is combine to form a instruction.
+- All instruction are considered as inputs.
+- State table is then implemented using flipflops and combinational ciruits
+  to generate different control signals.
 *** Delay Element Method
-- Implemented using delay element i.e. D-flipflops
+- Implemented using delay element i.e. D-flipflops.
 - A flipflop give output logic '1' after specific event (t-state)
   and output is used to generate control signals.
 *** Sequence Counter Method
 - Counter keeps on incrementing and generating diff counts.
-- Counts are decoded using decoder
-- And the output is used as control signals
+- Counts are decoded using decoder.
+- And the output is used as control signals.
 *** PLA Method
-- Programmable Logic Array
+- Programmable Logic Array.
 - PLA is an array of AND gates as input and the OR gates as output.
+- Input to the AND array is from various control signals generated.
+- And the output of the OR array is given as control signals.
 ** Soft Wired Unit Design Methods
 - Micro programmed control unit generates control signals
   based on microinstructions stored in control memory.
@@ -41,7 +44,7 @@
 [[../../img/get-user.png]]
 - Microprogram memory contains pointers to the actual microinstructions.
 - Microinstructions register points to the nanoinstruction memory.
-- Nanoinstruction memory contains actual mico-instruction.
+- Nanoinstruction memory contains actual micro-instruction.
 * Flynn's Classification
 - Classification based on no. of Instruction Streams (IS)
   and Data Streams (DS) in the system.
@@ -70,9 +73,9 @@
 - Latency: The amount of time that a single operation takes to execute.
 - Throughput: The rate at which operations get executed.
   In a non-pipelined processor,
-  $$Throughout=1/latency$$
+  $$Throughput=\frac{1}{latency}$$
   In a pipelined processor,
-  $$Throughout>1/latency$$
+  $$Throughput>\frac{1}{latency}$$
 - Advantages
   - Rate at which instruction executes is increased 
 ** Unpipelined approach
@@ -84,7 +87,7 @@
 - Disadvantages
   - Most of hardware is idle waiting for others to complete their task.
 * Pipeline Hazards
-- Pipelining increase processor performance  by incres. instruction
+- Pipelining increases processor performance by increasing instruction.
 - Several instructions are overlapped resulting the rate at which
   instruction executes.
 - Type of conflicts
@@ -95,8 +98,9 @@
 - Caused by access to memory by two instructions at the same time.
 - Can be resolved by using separate instruction and data memories.
 - Occurs when processor's hardware is not capable of execu all the instruction in the pipeline simultaneously.
-*** Data Hazards (Data Dependency Conflicts)
+*** TODO Data Hazards (Data Dependency Conflicts)
 - Caused when an instruction depends on the result of a prev instruction,
   but this result is not yet avail.
-*** Branch Difficulties (Control Hazards)
+*** TODO Branch Difficulties (Control Hazards)
 - To Be Edited.
+* TODO Micro-operations

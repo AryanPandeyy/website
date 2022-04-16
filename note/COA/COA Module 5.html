@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-14 Thu 12:16 -->
+<!-- 2022-04-16 Sat 20:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>COA Module 5</title>
@@ -223,72 +223,79 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6ed1d90">1. Cache Consistency (aka Cache Coherency)</a>
+<li><a href="#org524f9e9">1. Cache Consistency (aka Cache Coherency)</a>
 <ul>
-<li><a href="#org5818b31">1.1. Causes of Cache Consistency problems</a></li>
+<li><a href="#org290066f">1.1. Causes of Cache Consistency problems</a></li>
 </ul>
 </li>
-<li><a href="#org4aea7e9">2. Interleaved and Associative Memory</a>
+<li><a href="#orgcf46a83">2. Interleaved and Associative Memory</a>
 <ul>
-<li><a href="#orgfe5fa89">2.1. Associative Memory</a></li>
-<li><a href="#orga8e7a62">2.2. Interleaved Memory</a></li>
+<li><a href="#org35763c1">2.1. Associative Memory</a></li>
+<li><a href="#orgc398a0d">2.2. <span class="todo TODO">TODO</span> Interleaved Memory</a></li>
 </ul>
 </li>
-<li><a href="#orge958bfa">3. Types of RAM and ROM</a>
+<li><a href="#org55e6284">3. Types of RAM and ROM</a>
 <ul>
-<li><a href="#orgf4e7db2">3.1. RAM</a>
+<li><a href="#org3d2e25f">3.1. RAM</a>
 <ul>
-<li><a href="#org0be256b">3.1.1. DRAM</a></li>
-<li><a href="#org411ac5b">3.1.2. SRAM</a></li>
+<li><a href="#orgb3a4a00">3.1.1. DRAM</a></li>
+<li><a href="#orgb2dd0af">3.1.2. SRAM</a></li>
 </ul>
 </li>
-<li><a href="#org699967e">3.2. ROM</a>
+<li><a href="#orgce795ae">3.2. ROM</a>
 <ul>
-<li><a href="#orgbc84512">3.2.1. PROM</a></li>
-<li><a href="#orgc8977e8">3.2.2. EPROM</a></li>
+<li><a href="#orgb981c66">3.2.1. PROM</a></li>
+<li><a href="#org2bcb048">3.2.2. EPROM</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org47ba2ad">4. Allocation Policies</a>
+<li><a href="#org6aededc">4. Allocation Policies</a>
 <ul>
-<li><a href="#orge95ffad">4.1. Best Fit</a></li>
-<li><a href="#orgf64ebc0">4.2. Worst Fit</a></li>
-<li><a href="#org53d55e8">4.3. Next Fit</a></li>
+<li><a href="#orgf069a79">4.1. Best Fit</a></li>
+<li><a href="#orgb68f239">4.2. Worst Fit</a></li>
+<li><a href="#org88609c1">4.3. Next Fit</a></li>
+</ul>
+</li>
+<li><a href="#org2e179f6">5. Mapping techniques Cache Memory</a>
+<ul>
+<li><a href="#org39251a1">5.1. Direct Mapping Techniques</a></li>
+<li><a href="#orgc99ec66">5.2. Fully Associative Mapping</a></li>
+<li><a href="#orgcaa3942">5.3. Set Associative Mapping</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6ed1d90" class="outline-2">
-<h2 id="org6ed1d90"><span class="section-number-2">1.</span> Cache Consistency (aka Cache Coherency)</h2>
+<div id="outline-container-org524f9e9" class="outline-2">
+<h2 id="org524f9e9"><span class="section-number-2">1.</span> Cache Consistency (aka Cache Coherency)</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>For higher performance in a multiprocessor system, each processor will usually have its own cache.</li>
 <li>Cache coherence refers to the problem of keeping the data in these caches consistent.</li>
 </ul>
 </div>
-<div id="outline-container-org5818b31" class="outline-3">
-<h3 id="org5818b31"><span class="section-number-3">1.1.</span> Causes of Cache Consistency problems</h3>
+<div id="outline-container-org290066f" class="outline-3">
+<h3 id="org290066f"><span class="section-number-3">1.1.</span> Causes of Cache Consistency problems</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>Copy of line in cache &ne; Copy of line in memory, there is loss of
 cache consistency.
 <ul class="org-ul">
 <li>Cause can be updated in memory line but not in cache
-or updated in cache but not in memory</li>
+or updated in cache but not in memory.</li>
 </ul></li>
 <li>Due to some other bus master changing the data in memory.</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org4aea7e9" class="outline-2">
-<h2 id="org4aea7e9"><span class="section-number-2">2.</span> Interleaved and Associative Memory</h2>
+<div id="outline-container-orgcf46a83" class="outline-2">
+<h2 id="orgcf46a83"><span class="section-number-2">2.</span> Interleaved and Associative Memory</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgfe5fa89" class="outline-3">
-<h3 id="orgfe5fa89"><span class="section-number-3">2.1.</span> Associative Memory</h3>
+<div id="outline-container-org35763c1" class="outline-3">
+<h3 id="org35763c1"><span class="section-number-3">2.1.</span> Associative Memory</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Any stored item can be accessed by using the content of item.</li>
@@ -300,70 +307,65 @@ with the stored key associated with each line of data.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga8e7a62" class="outline-3">
-<h3 id="orga8e7a62"><span class="section-number-3">2.2.</span> Interleaved Memory</h3>
-<div class="outline-text-3" id="text-2-2">
-<ul class="org-ul">
-<li></li>
-</ul>
+<div id="outline-container-orgc398a0d" class="outline-3">
+<h3 id="orgc398a0d"><span class="section-number-3">2.2.</span> <span class="todo TODO">TODO</span> Interleaved Memory</h3>
 </div>
 </div>
-</div>
-<div id="outline-container-orge958bfa" class="outline-2">
-<h2 id="orge958bfa"><span class="section-number-2">3.</span> Types of RAM and ROM</h2>
+<div id="outline-container-org55e6284" class="outline-2">
+<h2 id="org55e6284"><span class="section-number-2">3.</span> Types of RAM and ROM</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgf4e7db2" class="outline-3">
-<h3 id="orgf4e7db2"><span class="section-number-3">3.1.</span> RAM</h3>
+<div id="outline-container-org3d2e25f" class="outline-3">
+<h3 id="org3d2e25f"><span class="section-number-3">3.1.</span> RAM</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>RAM (Random Access Memory) is called so any memory location in this IC can be accessed randomly.</li>
-<li>Two types of RAM: SRAM (Static RAM) and DRAM (Dynamic RAM)</li>
+<li>Two types of RAM: SRAM (Static RAM) and DRAM (Dynamic RAM).</li>
 </ul>
 </div>
-<div id="outline-container-org0be256b" class="outline-4">
-<h4 id="org0be256b"><span class="section-number-4">3.1.1.</span> DRAM</h4>
+<div id="outline-container-orgb3a4a00" class="outline-4">
+<h4 id="orgb3a4a00"><span class="section-number-4">3.1.1.</span> DRAM</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
-<li>DRAM is made of capacitors</li>
-<li>Requires less number of components to make one bit cell, hence require less space on silicon wafer.</li>
+<li>DRAM is made of capacitors.</li>
+<li>Requires less number of components to make one bit cell, hence require less space on silicon wafer..</li>
 <li>Comparatively cheaper.</li>
 <li>Slower than SRAM, because capacitors require time for charging and discharging.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org411ac5b" class="outline-4">
-<h4 id="org411ac5b"><span class="section-number-4">3.1.2.</span> SRAM</h4>
+<div id="outline-container-orgb2dd0af" class="outline-4">
+<h4 id="orgb2dd0af"><span class="section-number-4">3.1.2.</span> SRAM</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
-<li>SRAM is made up of flip flops</li>
-<li>Each cell is made of flip flops</li>
-<li>Requires more components than DRAM</li>
+<li>SRAM is made up of flip flops.</li>
+<li>Each cell is made of flip flops.</li>
+<li>Requires more components than DRAM.</li>
 <li>Requires more space on silicon wafer and costlier.</li>
-<li>Fast compare to DRAM</li>
+<li>Fast compare to DRAM.</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org699967e" class="outline-3">
-<h3 id="org699967e"><span class="section-number-3">3.2.</span> ROM</h3>
+<div id="outline-container-orgce795ae" class="outline-3">
+<h3 id="orgce795ae"><span class="section-number-3">3.2.</span> ROM</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>ROM is a memory where user cannot write anything.</li>
-<li>The data to be stored in ROM is written by ROM manufracturer.</li>
+<li>The data to be stored in ROM is written by ROM manufacturer.</li>
 </ul>
 </div>
-<div id="outline-container-orgbc84512" class="outline-4">
-<h4 id="orgbc84512"><span class="section-number-4">3.2.1.</span> PROM</h4>
+<div id="outline-container-orgb981c66" class="outline-4">
+<h4 id="orgb981c66"><span class="section-number-4">3.2.1.</span> PROM</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>PROM (Programmable Read Only Memory) aka OTP (One Time Programmable) coz it can be written only one time.</li>
-<li>When manufractured it is blank, once written on it, it cannot be re-written.</li>
+<li>When manufactured it is blank, once written on it, it cannot be re-written.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc8977e8" class="outline-4">
-<h4 id="orgc8977e8"><span class="section-number-4">3.2.2.</span> EPROM</h4>
+<div id="outline-container-org2bcb048" class="outline-4">
+<h4 id="org2bcb048"><span class="section-number-4">3.2.2.</span> EPROM</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li>EPROM (Erasble Programmable Read Only Memory) now its replaced by EEPROM.</li>
@@ -374,36 +376,37 @@ with the stored key associated with each line of data.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org47ba2ad" class="outline-2">
-<h2 id="org47ba2ad"><span class="section-number-2">4.</span> Allocation Policies</h2>
+<div id="outline-container-org6aededc" class="outline-2">
+<h2 id="org6aededc"><span class="section-number-2">4.</span> Allocation Policies</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
+<li>Partitioning refers to logical division of the memory into subparts.</li>
 <li>3 Memory Allocation Policies:
 <ol class="org-ol">
-<li><a href="#orge95ffad">Best Fit</a></li>
-<li><a href="#orgf64ebc0">Worst Fit</a></li>
-<li><a href="#org53d55e8">Next Fit</a></li>
+<li><a href="#orgf069a79">Best Fit</a></li>
+<li><a href="#orgb68f239">Worst Fit</a></li>
+<li><a href="#org88609c1">Next Fit</a></li>
 </ol></li>
 </ul>
 </div>
-<div id="outline-container-orge95ffad" class="outline-3">
-<h3 id="orge95ffad"><span class="section-number-3">4.1.</span> Best Fit</h3>
+<div id="outline-container-orgf069a79" class="outline-3">
+<h3 id="orgf069a79"><span class="section-number-3">4.1.</span> Best Fit</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>Smallest avail fragment is searched and the required data is stored in that fragment.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf64ebc0" class="outline-3">
-<h3 id="orgf64ebc0"><span class="section-number-3">4.2.</span> Worst Fit</h3>
+<div id="outline-container-orgb68f239" class="outline-3">
+<h3 id="orgb68f239"><span class="section-number-3">4.2.</span> Worst Fit</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>The largest avail block is used to store the data.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org53d55e8" class="outline-3">
-<h3 id="org53d55e8"><span class="section-number-3">4.3.</span> Next Fit</h3>
+<div id="outline-container-org88609c1" class="outline-3">
+<h3 id="org88609c1"><span class="section-number-3">4.3.</span> Next Fit</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>Immediate next empty block of a size equal or greater than data to be stored.</li>
@@ -411,10 +414,74 @@ with the stored key associated with each line of data.</li>
 </div>
 </div>
 </div>
+<div id="outline-container-org2e179f6" class="outline-2">
+<h2 id="org2e179f6"><span class="section-number-2">5.</span> Mapping techniques Cache Memory</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Mapping function and replacement algorithm together decides where a line from
+the main memory can reside in cache.</li>
+<li>Different mapping functions are:
+<ol class="org-ol">
+<li><a href="#org39251a1">Direct Mapping Techniques</a></li>
+<li><a href="#orgc99ec66">Fully Associative Mapping</a></li>
+<li><a href="#orgcaa3942">Set Associative Mapping</a></li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-org39251a1" class="outline-3">
+<h3 id="org39251a1"><span class="section-number-3">5.1.</span> Direct Mapping Techniques</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Each block of main memory can map to only one cache line.</li>
+<li>Advantages:
+<ul class="org-ul">
+<li>Simple Implementation.</li>
+<li>Inexpensive</li>
+</ul></li>
+<li>Disadvantages:
+<ul class="org-ul">
+<li>Fixed location for given block hence if a program accesses 2 blocks that
+map to the same line repeatedly, cache misses are very high.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc99ec66" class="outline-3">
+<h3 id="orgc99ec66"><span class="section-number-3">5.2.</span> Fully Associative Mapping</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Each block of main memory can map to any cache line.</li>
+<li>Advantages:
+<ul class="org-ul">
+<li>Cache misses will not occur.</li>
+</ul></li>
+<li>Disadvantages:
+<ul class="org-ul">
+<li>Complex Design.</li>
+<li>Expensive due to implementation of parallel comparator.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcaa3942" class="outline-3">
+<h3 id="orgcaa3942"><span class="section-number-3">5.3.</span> Set Associative Mapping</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Cache is divided into a number of sets. Each set contains a number of lines.</li>
+<li>Advantages:
+<ul class="org-ul">
+<li>Cache misses will not occur.</li>
+<li>Not very complex.</li>
+<li>Not much expensive because of simple implementation.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-04-14 Thu 12:16</p>
+<p class="date">Created: 2022-04-16 Sat 20:17</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
