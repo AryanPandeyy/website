@@ -70,6 +70,31 @@
 - Disadvantages:
   - Pointer is more in indexed allocation compare to linked list
     allocation.
-
 * TODO File System and Operation on File System
 * TODO Raid Structure
+* Disk Scheduling Algorithms
+** FCFS Scheduling Algorithms
+- First Come First Serve
+- This algorithm in general does not offer the fastest service.
+- Explain with an example then.
+** SSTF Scheduling Algorithms
+- Shortest Seek Time First
+- Services all the requests near to the current head position before
+  moving head far away to sevice other requests.
+- This scheduling method results in a total less head movement
+  compared to the FCFS scheduling.
+** SCAN Scheduling Algorithms
+- This approach works like an elevator does.
+- It scans down towards the nearest end and then when it hits the
+  bottom it scans up servicing the requests that it didn't get going
+  down.
+- If a request comes in after it has been scanned it will not be
+  serviced until the process comes back down or moves back up.
+** C-SCAN Scheduling Algorithms
+- Circular SCAN.
+- This is just an enhanced version of C-SCAN.
+- In this the scanning doesn't go past the last request in the
+  direction that it is moving.
+- It too jumps to the other end but not all the way to the end. Just
+  to the furthest request.
+** TODO LOOK Scheduling Algorithms

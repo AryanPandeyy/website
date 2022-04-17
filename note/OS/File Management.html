@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-17 Sun 10:19 -->
+<!-- 2022-04-17 Sun 14:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>File Management</title>
@@ -202,16 +202,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcbc14d0">1. Contiguous Allocation</a></li>
-<li><a href="#org61a0311">2. Linked List Allocation</a></li>
-<li><a href="#orgf1652c3">3. Indexed Allocation</a></li>
-<li><a href="#org117147d">4. <span class="todo TODO">TODO</span> File System and Operation on File System</a></li>
-<li><a href="#org0da0591">5. <span class="todo TODO">TODO</span> Raid Structure</a></li>
+<li><a href="#org0e84691">1. Contiguous Allocation</a></li>
+<li><a href="#org8c228b2">2. Linked List Allocation</a></li>
+<li><a href="#org651d69d">3. Indexed Allocation</a></li>
+<li><a href="#orgdcf37f1">4. <span class="todo TODO">TODO</span> File System and Operation on File System</a></li>
+<li><a href="#org1b9afe8">5. <span class="todo TODO">TODO</span> Raid Structure</a></li>
+<li><a href="#org5712e9a">6. Disk Scheduling Algorithms</a>
+<ul>
+<li><a href="#org1882a30">6.1. FCFS Scheduling Algorithms</a></li>
+<li><a href="#org849462f">6.2. SSTF Scheduling Algorithms</a></li>
+<li><a href="#org53ce6c1">6.3. SCAN Scheduling Algorithms</a></li>
+<li><a href="#org7322d4e">6.4. C-SCAN Scheduling Algorithms</a></li>
+<li><a href="#org0b5e94e">6.5. <span class="todo TODO">TODO</span> LOOK Scheduling Algorithms</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcbc14d0" class="outline-2">
-<h2 id="orgcbc14d0"><span class="section-number-2">1.</span> Contiguous Allocation</h2>
+<div id="outline-container-org0e84691" class="outline-2">
+<h2 id="org0e84691"><span class="section-number-2">1.</span> Contiguous Allocation</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Each file takes up a set of contiguous blocks on the disk.</li>
@@ -281,8 +290,8 @@ causing external fragmentation.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org61a0311" class="outline-2">
-<h2 id="org61a0311"><span class="section-number-2">2.</span> Linked List Allocation</h2>
+<div id="outline-container-org8c228b2" class="outline-2">
+<h2 id="org8c228b2"><span class="section-number-2">2.</span> Linked List Allocation</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Each file is a linked list of disk blocks.</li>
@@ -308,8 +317,8 @@ slightly more disk space rather than its actual size.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf1652c3" class="outline-2">
-<h2 id="orgf1652c3"><span class="section-number-2">3.</span> Indexed Allocation</h2>
+<div id="outline-container-org651d69d" class="outline-2">
+<h2 id="org651d69d"><span class="section-number-2">3.</span> Indexed Allocation</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>In indexed allocation, all the pointers are kept in one location
@@ -392,17 +401,72 @@ allocation.</li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org117147d" class="outline-2">
-<h2 id="org117147d"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> File System and Operation on File System</h2>
+<div id="outline-container-orgdcf37f1" class="outline-2">
+<h2 id="orgdcf37f1"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> File System and Operation on File System</h2>
 </div>
-<div id="outline-container-org0da0591" class="outline-2">
-<h2 id="org0da0591"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Raid Structure</h2>
+<div id="outline-container-org1b9afe8" class="outline-2">
+<h2 id="org1b9afe8"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Raid Structure</h2>
+</div>
+<div id="outline-container-org5712e9a" class="outline-2">
+<h2 id="org5712e9a"><span class="section-number-2">6.</span> Disk Scheduling Algorithms</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org1882a30" class="outline-3">
+<h3 id="org1882a30"><span class="section-number-3">6.1.</span> FCFS Scheduling Algorithms</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>First Come First Serve</li>
+<li>This algorithm in general does not offer the fastest service.</li>
+<li>Explain with an example then.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org849462f" class="outline-3">
+<h3 id="org849462f"><span class="section-number-3">6.2.</span> SSTF Scheduling Algorithms</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>Shortest Seek Time First</li>
+<li>Services all the requests near to the current head position before
+moving head far away to sevice other requests.</li>
+<li>This scheduling method results in a total less head movement
+compared to the FCFS scheduling.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org53ce6c1" class="outline-3">
+<h3 id="org53ce6c1"><span class="section-number-3">6.3.</span> SCAN Scheduling Algorithms</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>This approach works like an elevator does.</li>
+<li>It scans down towards the nearest end and then when it hits the
+bottom it scans up servicing the requests that it didn't get going
+down.</li>
+<li>If a request comes in after it has been scanned it will not be
+serviced until the process comes back down or moves back up.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7322d4e" class="outline-3">
+<h3 id="org7322d4e"><span class="section-number-3">6.4.</span> C-SCAN Scheduling Algorithms</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>Circular SCAN.</li>
+<li>This is just an enhanced version of C-SCAN.</li>
+<li>In this the scanning doesn't go past the last request in the
+direction that it is moving.</li>
+<li>It too jumps to the other end but not all the way to the end. Just
+to the furthest request.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0b5e94e" class="outline-3">
+<h3 id="org0b5e94e"><span class="section-number-3">6.5.</span> <span class="todo TODO">TODO</span> LOOK Scheduling Algorithms</h3>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-04-17 Sun 10:19</p>
+<p class="date">Created: 2022-04-17 Sun 14:30</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
