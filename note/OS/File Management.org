@@ -1,0 +1,73 @@
+#+TITLE: File Management
+* Contiguous Allocation
+- Each file takes up a set of contiguous blocks on the disk.
+- Contiguous allocation of a file is defined by the disk address of
+  the first block and length of total blocks occupied.
+- The directory entry for each file specifies the address of the
+  starting block and the total number of blocks allocated for this
+  file.
+- Example: File a starts at block 0 and it is 3 block long occupying
+  block 0,1,2. Similarly file B starts at block 6 and it is 5 block
+  long and so on.
+  | File | Start Block | Length |
+  | A    |           0 |      3 |
+  | B    |           6 |      5 |
+  | C    |          14 |      8 |
+- Advantages:
+  - Simple to implement, the only information needed is starting block
+    and length of the block.
+  - Both sequential and direct access can be supported by contiguous
+    allocation.
+- Disadvantages:
+  - When a allocated file is deleted, contiguous allocated blocks to
+    the file become free.
+  - For new file to allocate these blocks might not be sufficient. If
+    new file size is small than previously allocated size, some holes
+    remains.
+  - As a result, the disk ultimately consists of files and holes
+    causing external fragmentation.
+* Linked List Allocation
+- Each file is a linked list of disk blocks.
+- Linked list allocation overcomes the limitations of contiguous
+  allocation.
+- The directory contains a pointer to the first and last blocks of the
+  file.
+- Creation of a new file is simple. The directory entry holds a
+  pointer to the first disk block of the file.
+- The pointers need to be followed from block to block in order to
+  read a file.
+- Advantages:
+  - In linked list allocation, every disk block can be used which is
+    not possible in contiguous allocation.
+  - Hence, there is no external fragmentation.
+- Disadvantages:
+  - In each block pointer takes some space, so each file require
+    slightly more disk space rather than its actual size.
+* Indexed Allocation
+- In indexed allocation, all the pointers are kept in one location
+  called as index block. But in linked list allocation, the entire
+  pointer table must be in memory all the time.
+- Index block assigned to each file and this index block holds the
+  disk block addresses of that particular file.
+  | Directory |            |
+  |-----------+------------|
+  | File      | Index Node |
+  | A         |         15 |
+  |-----------+------------|
+
+  | Index Block 15 |
+  |----------------|
+  |              9 |
+  |              6 |
+  |             12 |
+  |             21 |
+  |             26 |
+- Advantages:
+  - Indexed allocation supports random access.
+  - No external fragmentation.
+- Disadvantages:
+  - Pointer is more in indexed allocation compare to linked list
+    allocation.
+
+* TODO File System and Operation on File System
+* TODO Raid Structure

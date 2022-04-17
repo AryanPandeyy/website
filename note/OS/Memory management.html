@@ -3,11 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-17 Sun 10:13 -->
+<!-- 2022-04-17 Sun 10:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
-<meta name="author" content="Aryan Pandey" />
+<title>Memory management</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -193,85 +192,144 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
 </style>
-<link rel="stylesheet" type="text/css" href="../worg.css"/>
 </head>
 <body>
 <div id="content" class="content">
+<h1 class="title">Memory management</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2c2c07a">1. COA</a>
-<ul>
-<li><a href="#orgdc46fe0">1.1. Module 3</a></li>
-<li><a href="#org981b236">1.2. Module 5</a></li>
-</ul>
-</li>
-<li><a href="#org2335ba5">2. MATH</a>
-<ul>
-<li><a href="#orgea91834">2.1. Probability Disturbution</a>
-<ul>
-<li><a href="#org370dab0">2.1.1. Poisson Disturbution</a></li>
-<li><a href="#org7b481c4">2.1.2. Normal Disturbution</a></li>
-</ul>
-</li>
-<li><a href="#orga69aa80">2.2. Nonlinear Programming</a></li>
-</ul>
-</li>
-<li><a href="#orgd530d10">3. OS</a>
-<ul>
-<li><a href="#org4362951">3.1. Memory Management</a></li>
-<li><a href="#org7ba9bfb">3.2. File Management</a></li>
-</ul>
-</li>
+<li><a href="#orgcd8a3cb">1. <span class="todo TODO">TODO</span> Paging</a></li>
+<li><a href="#org1c05b1f">2. Difference Between Paging and Segmentation</a></li>
+<li><a href="#org2e0ccb6">3. Demand Paging</a></li>
+<li><a href="#org08c82aa">4. Thrashing</a></li>
+<li><a href="#org8804682">5. <span class="todo TODO">TODO</span> Different types of Memory Fragmentation</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2c2c07a" class="outline-2">
-<h2 id="org2c2c07a"><span class="section-number-2">1.</span> COA</h2>
+<div id="outline-container-orgcd8a3cb" class="outline-2">
+<h2 id="orgcd8a3cb"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Paging</h2>
 <div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-orgdc46fe0" class="outline-3">
-<h3 id="orgdc46fe0"><span class="section-number-3">1.1.</span> <a href="../note/COA/COA Module 3.html">Module 3</a></h3>
-</div>
-<div id="outline-container-org981b236" class="outline-3">
-<h3 id="org981b236"><span class="section-number-3">1.2.</span> <a href="../note/COA/COA Module 5.html">Module 5</a></h3>
+<ul class="org-ul">
+<li>Technique which allows physical address space of the process to be noncontigous.</li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org2335ba5" class="outline-2">
-<h2 id="org2335ba5"><span class="section-number-2">2.</span> MATH</h2>
+<div id="outline-container-org1c05b1f" class="outline-2">
+<h2 id="org1c05b1f"><span class="section-number-2">2.</span> Difference Between Paging and Segmentation</h2>
 <div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Parameters</th>
+<th scope="col" class="org-left">Paging</th>
+<th scope="col" class="org-left">Segmentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Logical Address</td>
+<td class="org-left">CPU generates logical address and it is divided into 2 parts:a page number (p) and a page offset (d).</td>
+<td class="org-left">Logical address is divided into 2 parts:segment number (s) and offset (d)</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Table Index</td>
+<td class="org-left">Page number is used as an index into a page table.</td>
+<td class="org-left">Segment number is used as index to the segement table.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Base Address</td>
+<td class="org-left">Base address of each page is used as an index into a page table</td>
+<td class="org-left">Segement base indicates starting physical address of the segement in main memory and it also denotes length of the segment</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Physical Address</td>
+<td class="org-left">Combination of base address with page offset defines the physical memory</td>
+<td class="org-left">Same as above</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Fragmentation</td>
+<td class="org-left">Suffer through internal fragmentation</td>
+<td class="org-left">Suffer through external fragmentation.</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="outline-container-orgea91834" class="outline-3">
-<h3 id="orgea91834"><span class="section-number-3">2.1.</span> Probability Disturbution</h3>
-<div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org370dab0" class="outline-4">
-<h4 id="org370dab0"><span class="section-number-4">2.1.1.</span> <a href="./MATH/PD.html">Poisson Disturbution</a></h4>
-</div>
-<div id="outline-container-org7b481c4" class="outline-4">
-<h4 id="org7b481c4"><span class="section-number-4">2.1.2.</span> <a href="./MATH/ND.html">Normal Disturbution</a></h4>
-</div>
-</div>
-<div id="outline-container-orga69aa80" class="outline-3">
-<h3 id="orga69aa80"><span class="section-number-3">2.2.</span> <a href="./MATH/NLPP.html">Nonlinear Programming</a></h3>
-</div>
-</div>
-<div id="outline-container-orgd530d10" class="outline-2">
-<h2 id="orgd530d10"><span class="section-number-2">3.</span> OS</h2>
+
+<div id="outline-container-org2e0ccb6" class="outline-2">
+<h2 id="org2e0ccb6"><span class="section-number-2">3.</span> Demand Paging</h2>
 <div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Pages are brought in main memory from secondary storage on demand.</li>
+<li>When needed to execute a process, memory manager swap it into memory.</li>
+<li>Instead of swaping entrie process into memory. It allows to swap in
+only those pages which are required for execution at that time.</li>
+<li>Disk operation is initiated by OS handler to read the required page
+in memory.
+<ul class="org-ul">
+<li>After this, mapping of page to free frame is carried out.</li>
+</ul></li>
+<li>This approach of fetching pages as they are needed for execution is
+called demand paging.</li>
+<li>Advantages:
+<ul class="org-ul">
+<li>Memory is utilized more efficiently.</li>
+<li>Provide large size virtual memory.</li>
+</ul></li>
+<li>Disadvantages:
+<ul class="org-ul">
+<li>Page interrupts requires more number of table handling and
+processor overhed with compare to simple paged management
+techniques.</li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-org4362951" class="outline-3">
-<h3 id="org4362951"><span class="section-number-3">3.1.</span> <a href="./OS/Memory Management.html">Memory Management</a></h3>
 </div>
-<div id="outline-container-org7ba9bfb" class="outline-3">
-<h3 id="org7ba9bfb"><span class="section-number-3">3.2.</span> <a href="./OS/File Management.html">File Management</a></h3>
+<div id="outline-container-org08c82aa" class="outline-2">
+<h2 id="org08c82aa"><span class="section-number-2">4.</span> Thrashing</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>A process should have some minimum number of frames.</li>
+<li>If these numbers of frames are not available to the process then it
+will quickly page fault.</li>
+<li>Since in paging, pages are transferred between main memory and disk,
+this has an enormous overhead.</li>
+<li>Because of this frequent movement of pages between main memory and
+disk, system throughput reduces.</li>
+<li>This frequent paging activity causing the reduction in system
+throughput called as thrashing.</li>
+<li>Due to thrashing CPU utilization goes low.</li>
+<li>This thrashing can be limited by using local page replacement
+algorithm instead of global page replacement algorithm.</li>
+</ul>
 </div>
+</div>
+
+<div id="outline-container-org8804682" class="outline-2">
+<h2 id="org8804682"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Different types of Memory Fragmentation</h2>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-04-17 Sun 10:13</p>
+<p class="date">Created: 2022-04-17 Sun 10:11</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

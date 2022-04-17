@@ -8,3 +8,6 @@
 *** [[./MATH/PD.org][Poisson Disturbution]]
 *** [[./MATH/ND.html][Normal Disturbution]]
 ** [[./MATH/NLPP.html][Nonlinear Programming]]
+* OS
+** [[./OS/Memory Management.html][Memory Management]]
+** [[./OS/File Management.html][File Management]]

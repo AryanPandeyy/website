@@ -1,0 +1,50 @@
+#+TITLE: Memory management
+* TODO Paging
+- Technique which allows physical address space of the process to be noncontigous.
+* Difference Between Paging and Segmentation
+
+| Parameters       | Paging                                                                                                | Segmentation                                                                                                               |
+|------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------|
+| Logical Address  | CPU generates logical address and it is divided into 2 parts:a page number (p) and a page offset (d). | Logical address is divided into 2 parts:segment number (s) and offset (d)                                                  |
+|------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------|
+| Table Index      | Page number is used as an index into a page table.                                                    | Segment number is used as index to the segement table.                                                                     |
+|------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------|
+| Base Address     | Base address of each page is used as an index into a page table                                       | Segement base indicates starting physical address of the segement in main memory and it also denotes length of the segment |
+|------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------|
+| Physical Address | Combination of base address with page offset defines the physical memory                              | Same as above                                                                                                              |
+|------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------|
+| Fragmentation    | Suffer through internal fragmentation                                                                 | Suffer through external fragmentation.                                                                                     |
+|------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------|
+
+* Demand Paging
+- Pages are brought in main memory from secondary storage on demand.
+- When needed to execute a process, memory manager swap it into memory.
+- Instead of swaping entrie process into memory. It allows to swap in
+  only those pages which are required for execution at that time.
+- Disk operation is initiated by OS handler to read the required page
+  in memory.
+  - After this, mapping of page to free frame is carried out.
+- This approach of fetching pages as they are needed for execution is
+  called demand paging.
+- Advantages:
+  - Memory is utilized more efficiently.
+  - Provide large size virtual memory.
+- Disadvantages:
+  - Page interrupts requires more number of table handling and
+    processor overhed with compare to simple paged management
+    techniques.
+* Thrashing
+- A process should have some minimum number of frames.
+- If these numbers of frames are not available to the process then it
+  will quickly page fault.
+- Since in paging, pages are transferred between main memory and disk,
+  this has an enormous overhead.
+- Because of this frequent movement of pages between main memory and
+  disk, system throughput reduces.
+- This frequent paging activity causing the reduction in system
+  throughput called as thrashing.
+- Due to thrashing CPU utilization goes low.
+- This thrashing can be limited by using local page replacement
+  algorithm instead of global page replacement algorithm.
+
+* TODO Different types of Memory Fragmentation
