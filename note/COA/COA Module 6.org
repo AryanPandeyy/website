@@ -1,0 +1,31 @@
+#+AUTHOR: Aryan Pandey
+#+TITLE: COA Module 6
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
+* Data Transfer Techniques
+** Programmed I/O
+[[../../img/programmedio.png]]
+- In this method CPU has direct control over I/O.
+- The processor check status of the devices and issues read or write
+  commands if they are ready. During checking the status of devices
+  CPU waits for I/O module and hence this system wastes the CPU time.
+- Sequence of operations to be carried out in Programmed I/O:
+  1. Explain the diagram
+** Interrupt Driven
+[[../../img/interrupt.png]]
+- Interrupt Driven I/O overcomes the disadvantage of programmed I/O
+  i.e. the CPU waiting for I/O device.
+- This is overcome by not repeatedly checking the status of I/O
+  devices instead the I/O module interrupts when ready.
+- Sequence of operations for interrupt Driven I/O:
+  1. Explain diagram
+** I/O and DMA
+- DMA stands for Direct Memory Access. The I/O module can directly
+  access the memory using this method.
+- Interrupt driven and programmed I/O require active operations of the
+  CPU. DMA is the solution for these problems.
+- DMA controller takes over the control of the bus from CPU for I/O
+  transfer.
+- DMA controller sends the signals when its finished.
+- Advantages:
+  - CPU carries on with other work while the DMA controller deals with
+    transfer of data.
