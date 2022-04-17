@@ -1,4 +1,6 @@
+#+AUTHOR: Aryan Pandey
 #+TITLE: File Management
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
 * Contiguous Allocation
 - Each file takes up a set of contiguous blocks on the disk.
 - Contiguous allocation of a file is defined by the disk address of

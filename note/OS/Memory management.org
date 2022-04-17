@@ -1,4 +1,6 @@
+#+AUTHOR: Aryan Pandey
 #+TITLE: Memory management
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
 * TODO Paging
 - Technique which allows physical address space of the process to be noncontigous.
 * Difference Between Paging and Segmentation
