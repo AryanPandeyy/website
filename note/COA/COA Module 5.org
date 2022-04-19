@@ -2,32 +2,39 @@
 #+TITLE: COA Module 5
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
 * Cache Consistency (aka Cache Coherency)
-- For higher performance in a multiprocessor system, each processor will usually have its own cache.
-- Cache coherence refers to the problem of keeping the data in these caches consistent.
+- For higher performance in a multiprocessor system, each processor
+  will usually have its own cache.
+- Cache coherence refers to the problem of keeping the data in these
+  caches consistent.
 ** Causes of Cache Consistency problems
 - Copy of line in cache \ne Copy of line in memory, there is loss of
   cache consistency.
-  - Cause can be updated in memory line but not in cache
-    or updated in cache but not in memory.
+  - Cause can be updated in memory line but not in cache or updated in
+    cache but not in memory.
 - Due to some other bus master changing the data in memory.
 * Interleaved and Associative Memory
 ** Associative Memory
 - Any stored item can be accessed by using the content of item.
 - Item stored in associative memory can be viewed having two field
   $$KEY,DATA$$
-- Where *KEY* is the stored address and *DATA* is the information to be accessed.
-- Associative searching is based on simultaneous matching of the key to be searched
-  with the stored key associated with each line of data.
+- Where *KEY* is the stored address and *DATA* is the information to
+  be accessed.
+- Associative searching is based on simultaneous matching of the key
+  to be searched with the stored key associated with each line of
+  data.
 ** TODO Interleaved Memory
 * Types of RAM and ROM
 ** RAM
-- RAM (Random Access Memory) is called so any memory location in this IC can be accessed randomly.
+- RAM (Random Access Memory) is called so any memory location in this
+  IC can be accessed randomly.
 - Two types of RAM: SRAM (Static RAM) and DRAM (Dynamic RAM).
 *** DRAM
 - DRAM is made of capacitors.
-- Requires less number of components to make one bit cell, hence require less space on silicon wafer..
+- Requires less number of components to make one bit cell, hence
+  require less space on silicon wafer..
 - Comparatively cheaper.
-- Slower than SRAM, because capacitors require time for charging and discharging.
+- Slower than SRAM, because capacitors require time for charging and
+  discharging.
 *** SRAM
 - SRAM is made up of flip flops.
 - Each cell is made of flip flops.
@@ -38,11 +45,15 @@
 - ROM is a memory where user cannot write anything.
 - The data to be stored in ROM is written by ROM manufacturer.
 *** PROM
-- PROM (Programmable Read Only Memory) aka OTP (One Time Programmable) coz it can be written only one time.
-- When manufactured it is blank, once written on it, it cannot be re-written.
+- PROM (Programmable Read Only Memory) aka OTP (One Time Programmable)
+  coz it can be written only one time.
+- When manufactured it is blank, once written on it, it cannot be
+  re-written.
 *** EPROM
-- EPROM (Erasble Programmable Read Only Memory) now its replaced by EEPROM.
-- The data written can be erased by keeping the EPROM IC in the UV box.
+- EPROM (Erasble Programmable Read Only Memory) now its replaced by
+  EEPROM.
+- The data written can be erased by keeping the EPROM IC in the UV
+  box.
 - EEPROM are erased by giving an extra supply voltage.
 * Allocation Policies
 - Partitioning refers to logical division of the memory into subparts.
@@ -51,14 +62,16 @@
   2. [[*Worst Fit][Worst Fit]]
   3. [[*Next Fit][Next Fit]]
 ** Best Fit
-- Smallest avail fragment is searched and the required data is stored in that fragment.
+- Smallest avail fragment is searched and the required data is stored
+  in that fragment.
 ** Worst Fit
 - The largest avail block is used to store the data.
 ** Next Fit
-- Immediate next empty block of a size equal or greater than data to be stored.
+- Immediate next empty block of a size equal or greater than data to
+  be stored.
 * Mapping techniques Cache Memory
-- Mapping function and replacement algorithm together decides where a line from
-  the main memory can reside in cache.
+- Mapping function and replacement algorithm together decides where a
+  line from the main memory can reside in cache.
 - Different mapping functions are:
   1. [[*Direct Mapping Techniques][Direct Mapping Techniques]]
   2. [[*Fully Associative Mapping][Fully Associative Mapping]]
@@ -69,8 +82,9 @@
   - Simple Implementation.
   - Inexpensive
 - Disadvantages:
-  - Fixed location for given block hence if a program accesses 2 blocks that
-    map to the same line repeatedly, cache misses are very high.
+  - Fixed location for given block hence if a program accesses 2
+    blocks that map to the same line repeatedly, cache misses are very
+    high.
 ** Fully Associative Mapping
 - Each block of main memory can map to any cache line.
 - Advantages:
@@ -79,7 +93,8 @@
   - Complex Design.
   - Expensive due to implementation of parallel comparator.
 ** Set Associative Mapping
-- Cache is divided into a number of sets. Each set contains a number of lines.
+- Cache is divided into a number of sets. Each set contains a number
+  of lines.
 - Advantages:
   - Cache misses will not occur.
   - Not very complex.

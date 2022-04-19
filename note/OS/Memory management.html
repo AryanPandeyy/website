@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-17 Sun 10:18 -->
+<!-- 2022-04-19 Tue 08:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Memory management</title>
@@ -202,24 +202,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org41e1fd0">1. <span class="todo TODO">TODO</span> Paging</a></li>
-<li><a href="#org5b63a0e">2. Difference Between Paging and Segmentation</a></li>
-<li><a href="#orgd2a274d">3. Demand Paging</a></li>
-<li><a href="#org708e1c9">4. Thrashing</a></li>
-<li><a href="#org4308b18">5. <span class="todo TODO">TODO</span> Different types of Memory Fragmentation</a></li>
+<li><a href="#orgccaa92c">1. <span class="todo TODO">TODO</span> Paging</a></li>
+<li><a href="#orgc7bde16">2. Difference Between Paging and Segmentation</a></li>
+<li><a href="#org1cf56e7">3. Demand Paging</a></li>
+<li><a href="#org9d8ba46">4. Thrashing</a></li>
+<li><a href="#org8f3fa69">5. <span class="todo TODO">TODO</span> Different types of Memory Fragmentation</a></li>
+<li><a href="#org1077e36">6. FIFO Algorithm</a></li>
+<li><a href="#org1588ed2">7. Optimal Page Replacement Algorithm</a></li>
+<li><a href="#org7c2ff01">8. Least Recently Used Algorithm</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org41e1fd0" class="outline-2">
-<h2 id="org41e1fd0"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Paging</h2>
+<div id="outline-container-orgccaa92c" class="outline-2">
+<h2 id="orgccaa92c"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Paging</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Technique which allows physical address space of the process to be noncontigous.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5b63a0e" class="outline-2">
-<h2 id="org5b63a0e"><span class="section-number-2">2.</span> Difference Between Paging and Segmentation</h2>
+<div id="outline-container-orgc7bde16" class="outline-2">
+<h2 id="orgc7bde16"><span class="section-number-2">2.</span> Difference Between Paging and Segmentation</h2>
 <div class="outline-text-2" id="text-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -277,8 +280,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgd2a274d" class="outline-2">
-<h2 id="orgd2a274d"><span class="section-number-2">3.</span> Demand Paging</h2>
+<div id="outline-container-org1cf56e7" class="outline-2">
+<h2 id="org1cf56e7"><span class="section-number-2">3.</span> Demand Paging</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Pages are brought in main memory from secondary storage on demand.</li>
@@ -306,8 +309,8 @@ techniques.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org708e1c9" class="outline-2">
-<h2 id="org708e1c9"><span class="section-number-2">4.</span> Thrashing</h2>
+<div id="outline-container-org9d8ba46" class="outline-2">
+<h2 id="org9d8ba46"><span class="section-number-2">4.</span> Thrashing</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>A process should have some minimum number of frames.</li>
@@ -325,14 +328,404 @@ algorithm instead of global page replacement algorithm.</li>
 </ul>
 </div>
 </div>
+<div id="outline-container-org8f3fa69" class="outline-2">
+<h2 id="org8f3fa69"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Different types of Memory Fragmentation</h2>
+</div>
+<div id="outline-container-org1077e36" class="outline-2">
+<h2 id="org1077e36"><span class="section-number-2">6.</span> FIFO Algorithm</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Simplest page replacement algorithm and work on the basis of First
+In First Out (FIFO).</li>
+<li>This algorithm always chooses oldest page for replacement.</li>
+<li>This algorithm doesnt care about which pages are accessed frequently
+and which are not.</li>
+<li>Example: String - 5,0,2,3,0,1,3,4,5,4,2,0,3,4,3 Frames:3
+<ul class="org-ul">
+<li><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<div id="outline-container-org4308b18" class="outline-2">
-<h2 id="org4308b18"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Different types of Memory Fragmentation</h2>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Frames</th>
+<th scope="col" class="org-right">5</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">2</th>
+<th scope="col" class="org-right">3</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">1</th>
+<th scope="col" class="org-right">3</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">5</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">2</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">3</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">3</td>
+<td class="org-right">5</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">4</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li>Explain the working with above example.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1588ed2" class="outline-2">
+<h2 id="org1588ed2"><span class="section-number-2">7.</span> Optimal Page Replacement Algorithm</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Compare all other page-replacement algorithms, this algorithm has
+the lowest page-fault rate.</li>
+<li>This algorithm replaces that page which will not be used for the
+longest period of time.</li>
+<li>Example: String - 5,0,2,3,0,1,3,4,5,4,2,0,3,4,3 Frames:3
+<ul class="org-ul">
+<li><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Frames</th>
+<th scope="col" class="org-right">5</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">2</th>
+<th scope="col" class="org-right">3</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">1</th>
+<th scope="col" class="org-right">3</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">5</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">2</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">3</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">5</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">5</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li>Explain the working with above example.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7c2ff01" class="outline-2">
+<h2 id="org7c2ff01"><span class="section-number-2">8.</span> Least Recently Used Algorithm</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>When a page must be replaced, LRU chooses that page that was used
+farthest back in the past.</li>
+<li>This algorithm looks backward in time while optimal algorithm looks
+forward in time.</li>
+<li>Example: String - 5,0,2,3,0,1,3,4,5,4,2,0,3,4,3 Frames:3
+<ul class="org-ul">
+<li><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Frames</th>
+<th scope="col" class="org-right">5</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">2</th>
+<th scope="col" class="org-right">3</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">1</th>
+<th scope="col" class="org-right">3</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">5</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">2</th>
+<th scope="col" class="org-right">0</th>
+<th scope="col" class="org-right">3</th>
+<th scope="col" class="org-right">4</th>
+<th scope="col" class="org-right">3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">1</td>
+<td class="org-right">5</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">5</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li>Explain the working with above example.</li>
+</ul>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-04-17 Sun 10:18</p>
+<p class="date">Created: 2022-04-19 Tue 08:53</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

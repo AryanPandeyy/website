@@ -35,8 +35,8 @@
 - Input to the AND array is from various control signals generated.
 - And the output of the OR array is given as control signals.
 ** Soft Wired Unit Design Methods
-- Micro programmed control unit generates control signals
-  based on microinstructions stored in control memory.
+- Micro programmed control unit generates control signals based on
+  microinstructions stored in control memory.
 - Each instruction loads the control signals in control register.
 - These control signals are given to microinstructions register,
   decoded and then given to the individual components.
@@ -46,48 +46,53 @@
 - Microinstructions register points to the nanoinstruction memory.
 - Nanoinstruction memory contains actual micro-instruction.
 * Flynn's Classification
-- Classification based on no. of Instruction Streams (IS)
-  and Data Streams (DS) in the system.
+- Classification based on no. of Instruction Streams (IS) and Data
+  Streams (DS) in the system.
 - Parallel processing intro four categories:
   1. [[*Single Instruction Single Data (SISD)][Single Instruction Single Data (SISD)]]
   2. [[*Single Instruction Multiple Data (SIMD)][Single Instruction Multiple Data (SIMD)]]
   3. [[*Multiple Instruction Single Data (MISD)][Multiple Instruction Single Data (MISD)]]
   4. [[*Multiple Instruction Multiple Data (MIMD)][Multiple Instruction Multiple Data (MIMD)]]
 ** Single Instruction Single Data (SISD)
-- Single processor that executes one instruction
-  at a time on single data stored in the memory.
+- Single processor that executes one instruction at a time on single
+  data stored in the memory.
 ** Single Instruction Multiple Data (SIMD)
-- Same instruction is given to multiple
-  processing elements, but diff data.
+- Same instruction is given to multiple processing elements, but diff
+  data.
 ** Multiple Instruction Single Data (MISD)
-- Multiple Instruction streams and hence multiple
-  control units to decode these instructions.
-- Each control unit takes a diff instruction from
-  the diff memory module in the same memory.
+- Multiple Instruction streams and hence multiple control units to
+  decode these instructions.
+- Each control unit takes a diff instruction from the diff memory
+  module in the same memory.
 ** Multiple Instruction Multiple Data (MIMD)
-- Each processing element is having a diff set
-- of data and diff instruction.
+- Each processing element is having a diff set of data and diff
+  instruction.
 * Instruction Pipeline
-- Technique for overlapping the execution of several instructions to reduce
-  the execution time of a set of instructions.
-- Latency: The amount of time that a single operation takes to execute.
+- Technique for overlapping the execution of several instructions to
+  reduce the execution time of a set of instructions.
+- Latency: The amount of time that a single operation takes to
+  execute.
 - Throughput: The rate at which operations get executed.
   In a non-pipelined processor,
   $$Throughput=\frac{1}{latency}$$
   In a pipelined processor,
   $$Throughput>\frac{1}{latency}$$
 - Advantages
-  - Rate at which instruction executes is increased 
+  - Rate at which instruction executes is increased
 ** Unpipelined approach
 - Processor fetches an instruction from memory.
 - Decodes it to determine what the instruction was.
-- Read inputs from register files and perfrom operation on them given by instruction.
+- Read inputs from register files and perfrom operation on them given
+  by instruction.
 - Writes result back in register files.
-- (Instruction fetch, instruction decode, register read, instruction execution and register write-back)
+- (Instruction fetch, instruction decode, register read, instruction
+  execution and register write-back)
 - Disadvantages
-  - Most of hardware is idle waiting for others to complete their task.
+  - Most of hardware is idle waiting for others to complete their
+    task.
 * Pipeline Hazards
-- Pipelining increases processor performance by increasing instruction.
+- Pipelining increases processor performance by increasing
+  instruction.
 - Several instructions are overlapped resulting the rate at which
   instruction executes.
 - Type of conflicts
@@ -97,10 +102,11 @@
 *** Structural Hazards (Resource Conflicts)
 - Caused by access to memory by two instructions at the same time.
 - Can be resolved by using separate instruction and data memories.
-- Occurs when processor's hardware is not capable of execu all the instruction in the pipeline simultaneously.
+- Occurs when processor's hardware is not capable of execu all the
+  instruction in the pipeline simultaneously.
 *** TODO Data Hazards (Data Dependency Conflicts)
-- Caused when an instruction depends on the result of a prev instruction,
-  but this result is not yet avail.
+- Caused when an instruction depends on the result of a prev
+  instruction, but this result is not yet avail.
 *** TODO Branch Difficulties (Control Hazards)
 - To Be Edited.
 * TODO Micro-operations

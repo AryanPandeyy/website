@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-17 Sun 14:30 -->
+<!-- 2022-04-19 Tue 08:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>File Management</title>
@@ -202,25 +202,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0e84691">1. Contiguous Allocation</a></li>
-<li><a href="#org8c228b2">2. Linked List Allocation</a></li>
-<li><a href="#org651d69d">3. Indexed Allocation</a></li>
-<li><a href="#orgdcf37f1">4. <span class="todo TODO">TODO</span> File System and Operation on File System</a></li>
-<li><a href="#org1b9afe8">5. <span class="todo TODO">TODO</span> Raid Structure</a></li>
-<li><a href="#org5712e9a">6. Disk Scheduling Algorithms</a>
+<li><a href="#orga7885b3">1. Contiguous Allocation</a></li>
+<li><a href="#org3edbcc1">2. Linked List Allocation</a></li>
+<li><a href="#org12f23b8">3. Indexed Allocation</a></li>
+<li><a href="#org02429a8">4. <span class="todo TODO">TODO</span> File System and Operation on File System</a></li>
+<li><a href="#org9825625">5. <span class="todo TODO">TODO</span> Raid Structure</a></li>
+<li><a href="#org6ff652d">6. Disk Scheduling Algorithms</a>
 <ul>
-<li><a href="#org1882a30">6.1. FCFS Scheduling Algorithms</a></li>
-<li><a href="#org849462f">6.2. SSTF Scheduling Algorithms</a></li>
-<li><a href="#org53ce6c1">6.3. SCAN Scheduling Algorithms</a></li>
-<li><a href="#org7322d4e">6.4. C-SCAN Scheduling Algorithms</a></li>
-<li><a href="#org0b5e94e">6.5. <span class="todo TODO">TODO</span> LOOK Scheduling Algorithms</a></li>
+<li><a href="#org6f204bd">6.1. FCFS Scheduling Algorithms</a></li>
+<li><a href="#org10bfa4c">6.2. SSTF Scheduling Algorithms</a></li>
+<li><a href="#orgcc2148f">6.3. SCAN Scheduling Algorithms</a></li>
+<li><a href="#org0357848">6.4. C-SCAN Scheduling Algorithms</a></li>
+<li><a href="#org9672f8a">6.5. <span class="todo TODO">TODO</span> LOOK Scheduling Algorithms</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0e84691" class="outline-2">
-<h2 id="org0e84691"><span class="section-number-2">1.</span> Contiguous Allocation</h2>
+<div id="outline-container-orga7885b3" class="outline-2">
+<h2 id="orga7885b3"><span class="section-number-2">1.</span> Contiguous Allocation</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Each file takes up a set of contiguous blocks on the disk.</li>
@@ -290,8 +290,8 @@ causing external fragmentation.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8c228b2" class="outline-2">
-<h2 id="org8c228b2"><span class="section-number-2">2.</span> Linked List Allocation</h2>
+<div id="outline-container-org3edbcc1" class="outline-2">
+<h2 id="org3edbcc1"><span class="section-number-2">2.</span> Linked List Allocation</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Each file is a linked list of disk blocks.</li>
@@ -317,8 +317,8 @@ slightly more disk space rather than its actual size.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org651d69d" class="outline-2">
-<h2 id="org651d69d"><span class="section-number-2">3.</span> Indexed Allocation</h2>
+<div id="outline-container-org12f23b8" class="outline-2">
+<h2 id="org12f23b8"><span class="section-number-2">3.</span> Indexed Allocation</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>In indexed allocation, all the pointers are kept in one location
@@ -401,18 +401,18 @@ allocation.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdcf37f1" class="outline-2">
-<h2 id="orgdcf37f1"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> File System and Operation on File System</h2>
+<div id="outline-container-org02429a8" class="outline-2">
+<h2 id="org02429a8"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> File System and Operation on File System</h2>
 </div>
-<div id="outline-container-org1b9afe8" class="outline-2">
-<h2 id="org1b9afe8"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Raid Structure</h2>
+<div id="outline-container-org9825625" class="outline-2">
+<h2 id="org9825625"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Raid Structure</h2>
 </div>
-<div id="outline-container-org5712e9a" class="outline-2">
-<h2 id="org5712e9a"><span class="section-number-2">6.</span> Disk Scheduling Algorithms</h2>
+<div id="outline-container-org6ff652d" class="outline-2">
+<h2 id="org6ff652d"><span class="section-number-2">6.</span> Disk Scheduling Algorithms</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org1882a30" class="outline-3">
-<h3 id="org1882a30"><span class="section-number-3">6.1.</span> FCFS Scheduling Algorithms</h3>
+<div id="outline-container-org6f204bd" class="outline-3">
+<h3 id="org6f204bd"><span class="section-number-3">6.1.</span> FCFS Scheduling Algorithms</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>First Come First Serve</li>
@@ -421,8 +421,8 @@ allocation.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org849462f" class="outline-3">
-<h3 id="org849462f"><span class="section-number-3">6.2.</span> SSTF Scheduling Algorithms</h3>
+<div id="outline-container-org10bfa4c" class="outline-3">
+<h3 id="org10bfa4c"><span class="section-number-3">6.2.</span> SSTF Scheduling Algorithms</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li>Shortest Seek Time First</li>
@@ -433,8 +433,8 @@ compared to the FCFS scheduling.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org53ce6c1" class="outline-3">
-<h3 id="org53ce6c1"><span class="section-number-3">6.3.</span> SCAN Scheduling Algorithms</h3>
+<div id="outline-container-orgcc2148f" class="outline-3">
+<h3 id="orgcc2148f"><span class="section-number-3">6.3.</span> SCAN Scheduling Algorithms</h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li>This approach works like an elevator does.</li>
@@ -446,8 +446,8 @@ serviced until the process comes back down or moves back up.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7322d4e" class="outline-3">
-<h3 id="org7322d4e"><span class="section-number-3">6.4.</span> C-SCAN Scheduling Algorithms</h3>
+<div id="outline-container-org0357848" class="outline-3">
+<h3 id="org0357848"><span class="section-number-3">6.4.</span> C-SCAN Scheduling Algorithms</h3>
 <div class="outline-text-3" id="text-6-4">
 <ul class="org-ul">
 <li>Circular SCAN.</li>
@@ -459,14 +459,14 @@ to the furthest request.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0b5e94e" class="outline-3">
-<h3 id="org0b5e94e"><span class="section-number-3">6.5.</span> <span class="todo TODO">TODO</span> LOOK Scheduling Algorithms</h3>
+<div id="outline-container-org9672f8a" class="outline-3">
+<h3 id="org9672f8a"><span class="section-number-3">6.5.</span> <span class="todo TODO">TODO</span> LOOK Scheduling Algorithms</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-04-17 Sun 14:30</p>
+<p class="date">Created: 2022-04-19 Tue 08:53</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

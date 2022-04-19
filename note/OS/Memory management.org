@@ -48,5 +48,44 @@
 - Due to thrashing CPU utilization goes low.
 - This thrashing can be limited by using local page replacement
   algorithm instead of global page replacement algorithm.
-
 * TODO Different types of Memory Fragmentation
+* FIFO Algorithm
+- Simplest page replacement algorithm and work on the basis of First
+  In First Out (FIFO).
+- This algorithm always chooses oldest page for replacement.
+- This algorithm doesnt care about which pages are accessed frequently
+  and which are not.
+- Example: String - 5,0,2,3,0,1,3,4,5,4,2,0,3,4,3 Frames:3
+  -
+    | Frames | 5 | 0 | 2 | 3 | 0 | 1 | 3 | 4 | 5 | 4 | 2 | 0 | 3 | 4 | 3 |
+    |--------+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+    |        | 5 | 5 | 5 | 3 |   | 3 |   | 3 | 5 |   | 5 | 5 | 3 | 3 |   |
+    |        |   | 0 | 0 | 0 |   | 1 |   | 1 | 1 |   | 2 | 2 | 4 | 4 |   |
+    |        |   |   | 2 | 2 |   | 2 |   | 4 | 4 |   | 4 | 0 | 0 | 0 |   |
+- Explain the working with above example.
+* Optimal Page Replacement Algorithm
+- Compare all other page-replacement algorithms, this algorithm has
+  the lowest page-fault rate.
+- This algorithm replaces that page which will not be used for the
+  longest period of time.
+- Example: String - 5,0,2,3,0,1,3,4,5,4,2,0,3,4,3 Frames:3
+  -
+    | Frames | 5 | 0 | 2 | 3 | 0 | 1 | 3 | 4 | 5 | 4 | 2 | 0 | 3 | 4 | 3 |
+    |--------+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+    |        | 5 | 5 | 5 | 3 |   | 5 |   | 5 |   |   | 2 | 0 |   |   |   |
+    |        |   | 0 | 0 | 0 |   | 1 |   | 4 |   |   | 4 | 4 |   |   |   |
+    |        |   |   | 2 | 2 |   | 3 |   | 3 |   |   | 3 | 3 |   |   |   |
+- Explain the working with above example.
+* Least Recently Used Algorithm
+- When a page must be replaced, LRU chooses that page that was used
+  farthest back in the past.
+- This algorithm looks backward in time while optimal algorithm looks
+  forward in time.
+- Example: String - 5,0,2,3,0,1,3,4,5,4,2,0,3,4,3 Frames:3
+  -
+    | Frames | 5 | 0 | 2 | 3 | 0 | 1 | 3 | 4 | 5 | 4 | 2 | 0 | 3 | 4 | 3 |
+    |--------+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+    |        | 5 | 5 | 5 | 3 |   | 3 |   | 3 | 3 |   | 2 | 2 | 2 | 4 |   |
+    |        |   | 0 | 0 | 0 |   | 0 |   | 4 | 4 |   | 4 | 4 | 3 | 3 |   |
+    |        |   |   | 2 | 2 |   | 1 |   | 1 | 5 |   | 5 | 0 | 0 | 0 |   |
+- Explain the working with above example.
