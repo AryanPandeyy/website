@@ -1,0 +1,95 @@
+* RPC in Session layer
+- RPC is working as a client-server model.
+- RPC uses different Authentication methods to validate the client
+  request.
+- RPC protocol is independent of transport layer protocols.
+- RPC requests can use both UDP and TCP but prefer UDP format.
+** RPC authentication methods
+1. Null Authentication
+   - Calls such as caller does not know who he is or the server does
+     not care who the caller is.
+2. UNIX Authentication
+   - The caller may wish to identify himself as he is identified in
+     UNIX system.
+3. DES Authentication
+   - DES Authentication is the advanced form of UNIX Authentication.
+* TODO TCP sliding window protocol
+* TODO Desgin a network between two centre's in the city of organization
+* Congestion control in TCP (Explain with a diagram)
+- TCP uses a congestion window and a congestion policy that avoid
+  congestion.
+- Congestion Policy
+  1. Slow Start Phase
+  2. Congestion Avoidance Phase
+  3. Congestion Detection Phase
+** Slow Start Phase
+- In this phase after every RTT the congestion window size increments
+  exponentially.
+** Congestion Avoidance Phase
+- This phase starts after the threshold value also denoted as
+  ssthresh.
+** Congestion Detection Phase
+- If congestion occurs, the congestion window size is decreased.
+- The only way a sender can guess that congestion has occurred is the
+  need to retransmit a segment.
+* Transport primitives used in berkeley socket (diagram of socket with TCP)
+
+| Sr No. | Primitives | Meaning                                                          |
+|      1 | SOCKET     | Create a new communication end point.                            |
+|      2 | BIND       | Provide a local address to a socket.                             |
+|      3 | LISTEN     | Show willingness to accept connections.                          |
+|      4 | ACCEPT     | Block the caller as long as a connection attempt does not arrive |
+|      5 | CONNECT    | Attempt to establish a connection.                               |
+|      6 | SEND       | Send Data.                                                       |
+|      7 | RECEIVE    | Receive data.                                                    |
+|      8 | CLOSE      | Release the connection.                                          |
+
+* TODO Design Hospital Network
+* TODO Design a network for an educational institution.
+* TCP timer management and transaction in TCP
+TCP implementation uses four timers:
+** Retransmission Timer
+- To retransmit lost segments, TCP uses retransmission timer.
+- When TCP sends a segement the timer starts and stops when the
+  acknowledgment is received.
+- If the timer expires timeout occurs and the segement is retransmitted.
+** Persistent Timer
+- To deal with a zero-window-size deadlock situation, TCP uses a
+  persistence timer.
+- When the TCP receives an acknowledgment with a window size of zero,
+  it starts a persistence timer.
+- When the persistence timer goes off, the TCP sending sends a special
+  segment called a probe.
+- The probe causes the receiving TCP to resend the acknowledgment
+  which was lost.
+** Keep Alive Timer
+- Used to prevent a long idle connection between two TCP's.
+- If a client opens a TCP connection to a server transfers some data
+  and becomes silent the client will crash.
+- In this case, the connection remains open forever.
+- To avoid such case Keep Alive Timer are used.
+** Time Wait Timer
+- 
+* TODO Sliding window protocol
+** Receiver
+- The TCP window size (aka receive window) is the amount of free space
+  in the server's receive buffer.
+- It provides a limit to the amount of data the sender can transmit.
+** Sender
+- The client has send a window to match the server's receive window.
+- The size of the window is the total number of bytes that the client
+  is allowed to have unacknowledge at a time.
+* Issues of session layer
+** Establish sessions between machines
+- The establishment of session between machines is an important
+  service provided by session layer.
+- Responsible for creating a dialog between connected machines.
+- The session layer provides mechanism for opening, closing, and
+  managing a session between end-user application processes.
+** Enhanced Services
+- Certain services such as checkpoints and management of tokens are
+  the key features of session layer.
+** To help in Token management and Synchronization
+- The session layer plays an important role in preventing collision of
+  several critical operation as well as ensuring better data transfer
+  by establishing synchronization.
