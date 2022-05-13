@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-13 Fri 17:09 -->
+<!-- 2022-05-13 Fri 17:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Theory of Matrices</title>
 <meta name="author" content="Aryan Pandey" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -193,93 +193,212 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
 </style>
-<link rel="stylesheet" type="text/css" href="../worg.css"/>
+<link rel="stylesheet" type="text/css" href="../../worg.css"/>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content" class="content">
+<h1 class="title">Theory of Matrices</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4a1436e">1. COA</a>
+<li><a href="#org73f90af">1. Eigen values and Eigen vectors</a></li>
+<li><a href="#org58dd3cc">2. Cayley-Hamilton Theorem</a></li>
+<li><a href="#orgffa52c7">3. Similarity of Matrices</a>
 <ul>
-<li><a href="#org4492e88">1.1. Module 3</a></li>
-<li><a href="#orgf1cca57">1.2. Module 5</a></li>
+<li><a href="#org1d9970f">3.1. Algebraic and Geometric Multiplicity of an Eignevalue</a>
+<ul>
+<li><a href="#orga49f91d">3.1.1. Algebraic Multiplicity</a></li>
+<li><a href="#orgf059f2e">3.1.2. Geometric Multiplicity</a></li>
 </ul>
 </li>
-<li><a href="#org95cf5ec">2. MATH</a>
-<ul>
-<li><a href="#org433e915">2.1. Matrices</a></li>
-<li><a href="#org5d33ac7">2.2. Complex Numbers</a></li>
-<li><a href="#orga42b6eb">2.3. Probability Disturbution</a>
-<ul>
-<li><a href="#org979acb3">2.3.1. Poisson Disturbution</a></li>
-<li><a href="#orgb2fae50">2.3.2. Normal Disturbution</a></li>
 </ul>
 </li>
-<li><a href="#org3909eea">2.4. Nonlinear Programming</a></li>
+<li><a href="#orgf3b395e">4. Diagonalising and Non-Diagonalising Matrix</a>
+<ul>
+<li><a href="#org95f0cbf">4.1. Diagonalising a Given Matrix</a>
+<ul>
+<li><a href="#org0872d81">4.1.1. (a) Distinct Eigenvalues</a></li>
+<li><a href="#orgd55e73e">4.1.2. (b) Repeated Eigenvalues</a></li>
 </ul>
 </li>
-<li><a href="#org6d49b00">3. OS</a>
-<ul>
-<li><a href="#org4d8002f">3.1. Memory Management</a></li>
-<li><a href="#org739f73f">3.2. File Management</a></li>
+<li><a href="#orga01f3b8">4.2. Non-Diagonalising Matrix</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4a1436e" class="outline-2">
-<h2 id="org4a1436e"><span class="section-number-2">1.</span> COA</h2>
+<div id="outline-container-org73f90af" class="outline-2">
+<h2 id="org73f90af"><span class="section-number-2">1.</span> Eigen values and Eigen vectors</h2>
 <div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Sum of diagonal elements = Sum of eigen values.</li>
+</ul>
+\begin{equation}
+| A - \lambda I | = 0 ... Characteristic Equation \\
+\lambda^3-[sum of diagonal elements]\lambda^2+[sum of minor of diagonal elements]\lambda-|A|=0
+\end{equation}
+\begin{equation}
+\lambda=x,y,z \\
+\end{equation}
+<ul class="org-ul">
+<li>Put lambda value in the matrices</li>
+</ul>
+\begin{equation}
+\left(
+ \begin{matrix}
+  a-\lambda & b & c \\
+  d & e-\lambda & f \\
+  g & h & i-\lambda 
+ \end{matrix}
+ \right)
+ \begin{matrix}
+  x_1\\
+  x_2\\
+  x_3 
+ \end{matrix}
+=
+ \begin{matrix}
+  0\\
+  0\\
+  0 
+ \end{matrix}
+ \end{equation}
+ \begin{equation}
+ax_1+bx_2+cx_3=0 \\
+dx_1+ex_2+fx_3=0 \\
+gx_1+hx_2+ix_3=0 \\
+ \end{equation}
+<ul class="org-ul">
+<li>Cramer rule can only be in that value which is not repeated</li>
+</ul>
+\begin{equation}
+\frac{x_1}{minorofequation}=\frac{x_2}{minorofequation}=\frac{x_3}{minorofequation}
+\end{equation}
 </div>
-<div id="outline-container-org4492e88" class="outline-3">
-<h3 id="org4492e88"><span class="section-number-3">1.1.</span> <a href="../note/COA/COA Module 3.html">Module 3</a></h3>
 </div>
-<div id="outline-container-orgf1cca57" class="outline-3">
-<h3 id="orgf1cca57"><span class="section-number-3">1.2.</span> <a href="../note/COA/COA Module 5.html">Module 5</a></h3>
-</div>
-</div>
-<div id="outline-container-org95cf5ec" class="outline-2">
-<h2 id="org95cf5ec"><span class="section-number-2">2.</span> MATH</h2>
+<div id="outline-container-org58dd3cc" class="outline-2">
+<h2 id="org58dd3cc"><span class="section-number-2">2.</span> Cayley-Hamilton Theorem</h2>
 <div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-org433e915" class="outline-3">
-<h3 id="org433e915"><span class="section-number-3">2.1.</span> <a href="../note/MATH/Matrices.html">Matrices</a></h3>
-</div>
-<div id="outline-container-org5d33ac7" class="outline-3">
-<h3 id="org5d33ac7"><span class="section-number-3">2.2.</span> <a href="../note/MATH/ComplexNo.html">Complex Numbers</a></h3>
-</div>
-<div id="outline-container-orga42b6eb" class="outline-3">
-<h3 id="orga42b6eb"><span class="section-number-3">2.3.</span> Probability Disturbution</h3>
-<div class="outline-text-3" id="text-2-3">
-</div>
-<div id="outline-container-org979acb3" class="outline-4">
-<h4 id="org979acb3"><span class="section-number-4">2.3.1.</span> <a href="./MATH/PD.html">Poisson Disturbution</a></h4>
-</div>
-<div id="outline-container-orgb2fae50" class="outline-4">
-<h4 id="orgb2fae50"><span class="section-number-4">2.3.2.</span> <a href="./MATH/ND.html">Normal Disturbution</a></h4>
+\begin{equation}
+| A - \lambda I | = 0 ... Characteristic Equation \\
+\lambda^3-[sum of diagonal elements]\lambda^2+[sum of minor of diagonal elements]\lambda-|A|=0
+\end{equation}
+<ul class="org-ul">
+<li>Now put instead of &lambda;.</li>
+</ul>
+<p>
+\(A^3-[sum of diagonal elements]A^2+[sum of minor of diagonal
+elements]A-|A|=0\)
+</p>
 </div>
 </div>
-<div id="outline-container-org3909eea" class="outline-3">
-<h3 id="org3909eea"><span class="section-number-3">2.4.</span> <a href="./MATH/NLPP.html">Nonlinear Programming</a></h3>
-</div>
-</div>
-<div id="outline-container-org6d49b00" class="outline-2">
-<h2 id="org6d49b00"><span class="section-number-2">3.</span> OS</h2>
+<div id="outline-container-orgffa52c7" class="outline-2">
+<h2 id="orgffa52c7"><span class="section-number-2">3.</span> Similarity of Matrices</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org4d8002f" class="outline-3">
-<h3 id="org4d8002f"><span class="section-number-3">3.1.</span> <a href="./OS/Memory management.html">Memory Management</a></h3>
+<div id="outline-container-org1d9970f" class="outline-3">
+<h3 id="org1d9970f"><span class="section-number-3">3.1.</span> Algebraic and Geometric Multiplicity of an Eignevalue</h3>
+<div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org739f73f" class="outline-3">
-<h3 id="org739f73f"><span class="section-number-3">3.2.</span> <a href="./OS/File Management.html">File Management</a></h3>
+<div id="outline-container-orga49f91d" class="outline-4">
+<h4 id="orga49f91d"><span class="section-number-4">3.1.1.</span> Algebraic Multiplicity</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>If an eignevalue &lambda;<sub>1</sub> of matrix <i>A</i> is repeated <i>t</i> times the
+<i>t</i> is called the <b>algebraic multiplicity</b> of &lambda;<sub>1</sub>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf059f2e" class="outline-4">
+<h4 id="orgf059f2e"><span class="section-number-4">3.1.2.</span> Geometric Multiplicity</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>If corresponding to an eigenvalue &lambda;<sub>1</sub>, there are <i>s</i> linearly
+independent eigenvectors the <i>s</i> is called the <b>geometric
+multiplicity</b> of &lambda;<sub>1</sub></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf3b395e" class="outline-2">
+<h2 id="orgf3b395e"><span class="section-number-2">4.</span> Diagonalising and Non-Diagonalising Matrix</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org95f0cbf" class="outline-3">
+<h3 id="org95f0cbf"><span class="section-number-3">4.1.</span> Diagonalising a Given Matrix</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-org0872d81" class="outline-4">
+<h4 id="org0872d81"><span class="section-number-4">4.1.1.</span> (a) Distinct Eigenvalues</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<ul class="org-ul">
+<li>If all eignevalues are distinct the matrix is <b>Diagonalisable</b></li>
+<li>If \(X_1,X_2,X_3\) then \(M=[X_1, X_2, X_3]\) is the <b>transforming matrix</b></li>
+<li><p>
+If \(\lambda_1, \lambda_2, \lambda_3\) are the distinct eigenvalues
+then the diagonal matrix <code>D</code> is
+</p>
+\begin{matrix}
+ \lambda_1 & 0 & 0 \\
+ 0 & \lambda_2 & 0 \\
+ 0 & 0 & \lambda_3
+\end{matrix}</li>
+<li>\(M^{-1}AM=D\) This shows that <code>M</code> diagonalises <code>A</code> to diagonal matrix
+<code>D</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd55e73e" class="outline-4">
+<h4 id="orgd55e73e"><span class="section-number-4">4.1.2.</span> (b) Repeated Eigenvalues</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<ol class="org-ol">
+<li>If an eigenvalue &lambda; is repeated 't' times then its <b>algebraic
+multiplicity</b> is 't'.</li>
+<li>If there are 's' linearly independent eigenvectors then the
+<b>geometric multiplicity</b> of &lambda; is 's'.</li>
+<li>If \(t=s\) then the matrix is <b>diagonalisable</b>.</li>
+<li>Rest is same as above.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orga01f3b8" class="outline-3">
+<h3 id="orga01f3b8"><span class="section-number-3">4.2.</span> Non-Diagonalising Matrix</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>If the algebraic multiplicity of &lambda; is <b>not equal</b> the
+geometric multiplicity, then the matrix <code>A</code> is <b>not diagonalisable</b>.</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-05-13 Fri 17:09</p>
+<p class="date">Created: 2022-05-13 Fri 17:03</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

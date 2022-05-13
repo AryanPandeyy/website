@@ -1,0 +1,19 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
+* Cauchy's Integral Thm:-
+- If a complex function f(x) is analytic on a simple closed curve c then
+\begin{equation}
+\nonumber
+\int_c f(c)dz=0
+\end{equation}
+** Cauchy's Integral Formula:-
+- If f(x) is an analytic function in a closed curve c and if a any
+  point- within c then
+\begin{equation}
+f(a)=\frac{1}{2\pi \imath} \int_c \frac{f(c)}{z-a} dz \\
+\therefore \int_c \frac{f(c)}{z-a}dz=2\pi \imath f(a)
+\end{equation}
+- Note:- Differentiate enq(1) w.r.t a partially n times
+  both sides
+\begin{equation}
+\int_c \frac{f(x)}{(z-a)^{n+1}}=\frac{2\pi \imath}{n!} f^n(a)
+\end{equation}

@@ -1,0 +1,83 @@
+#+AUTHOR: Aryan Pandey
+#+TITLE: Theory of Matrices
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
+* Eigen values and Eigen vectors
+- Sum of diagonal elements = Sum of eigen values.
+\begin{equation}
+| A - \lambda I | = 0 ... Characteristic Equation \\
+\lambda^3-[sum of diagonal elements]\lambda^2+[sum of minor of diagonal elements]\lambda-|A|=0
+\end{equation}
+\begin{equation}
+\lambda=x,y,z \\
+\end{equation}
+- Put lambda value in the matrices
+\begin{equation}
+\left(
+ \begin{matrix}
+  a-\lambda & b & c \\
+  d & e-\lambda & f \\
+  g & h & i-\lambda 
+ \end{matrix}
+ \right)
+ \begin{matrix}
+  x_1\\
+  x_2\\
+  x_3 
+ \end{matrix}
+=
+ \begin{matrix}
+  0\\
+  0\\
+  0 
+ \end{matrix}
+ \end{equation}
+ \begin{equation}
+ax_1+bx_2+cx_3=0 \\
+dx_1+ex_2+fx_3=0 \\
+gx_1+hx_2+ix_3=0 \\
+ \end{equation}
+ - Cramer rule can only be in that value which is not repeated
+\begin{equation}
+\frac{x_1}{minorofequation}=\frac{x_2}{minorofequation}=\frac{x_3}{minorofequation}
+\end{equation}
+* Cayley-Hamilton Theorem
+\begin{equation}
+| A - \lambda I | = 0 ... Characteristic Equation \\
+\lambda^3-[sum of diagonal elements]\lambda^2+[sum of minor of diagonal elements]\lambda-|A|=0
+\end{equation}
+- Now put instead of \lambda.
+$A^3-[sum of diagonal elements]A^2+[sum of minor of diagonal
+elements]A-|A|=0$
+* Similarity of Matrices
+** Algebraic and Geometric Multiplicity of an Eignevalue
+*** Algebraic Multiplicity
+- If an eignevalue \lambda_1 of matrix /A/ is repeated /t/ times the
+  /t/ is called the *algebraic multiplicity* of \lambda_1.
+*** Geometric Multiplicity
+- If corresponding to an eigenvalue \lambda_1, there are /s/ linearly
+  independent eigenvectors the /s/ is called the *geometric
+  multiplicity* of \lambda_1
+* Diagonalising and Non-Diagonalising Matrix
+** Diagonalising a Given Matrix
+*** (a) Distinct Eigenvalues
+- If all eignevalues are distinct the matrix is *Diagonalisable*
+- If $X_1,X_2,X_3$ then $M=[X_1, X_2, X_3]$ is the *transforming matrix*
+- If $\lambda_1, \lambda_2, \lambda_3$ are the distinct eigenvalues
+  then the diagonal matrix =D= is
+ \begin{matrix}
+  \lambda_1 & 0 & 0 \\
+  0 & \lambda_2 & 0 \\
+  0 & 0 & \lambda_3
+ \end{matrix}
+- $M^{-1}AM=D$ This shows that =M= diagonalises =A= to diagonal matrix
+  =D=.
+*** (b) Repeated Eigenvalues
+1. If an eigenvalue \lambda is repeated 't' times then its *algebraic
+   multiplicity* is 't'.
+2. If there are 's' linearly independent eigenvectors then the
+   *geometric multiplicity* of \lambda is 's'.
+3. If $t=s$ then the matrix is *diagonalisable*.
+4. Rest is same as above.
+** Non-Diagonalising Matrix
+- If the algebraic multiplicity of \lambda is *not equal* the
+  geometric multiplicity, then the matrix =A= is *not diagonalisable*.
