@@ -4,7 +4,9 @@
 * Eigen values and Eigen vectors
 - Sum of diagonal elements = Sum of eigen values.
 \begin{equation}
-| A - \lambda I | = 0 ... Characteristic Equation \\
+| A - \lambda I | = 0 ... Characteristic Equation
+\end{equation}
+\begin{equation}
 \lambda^3-[sum of diagonal elements]\lambda^2+[sum of minor of diagonal elements]\lambda-|A|=0
 \end{equation}
 \begin{equation}
@@ -43,6 +45,8 @@ gx_1+hx_2+ix_3=0 \\
 * Cayley-Hamilton Theorem
 \begin{equation}
 | A - \lambda I | = 0 ... Characteristic Equation \\
+\end{equation}
+\begin{equation}
 \lambda^3-[sum of diagonal elements]\lambda^2+[sum of minor of diagonal elements]\lambda-|A|=0
 \end{equation}
 - Now put instead of \lambda.

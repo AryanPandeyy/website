@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-13 Fri 17:03 -->
+<!-- 2022-05-17 Tue 08:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Theory of Matrices</title>
@@ -223,40 +223,42 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org73f90af">1. Eigen values and Eigen vectors</a></li>
-<li><a href="#org58dd3cc">2. Cayley-Hamilton Theorem</a></li>
-<li><a href="#orgffa52c7">3. Similarity of Matrices</a>
+<li><a href="#org597bf42">1. Eigen values and Eigen vectors</a></li>
+<li><a href="#orgec53c96">2. Cayley-Hamilton Theorem</a></li>
+<li><a href="#org0f39550">3. Similarity of Matrices</a>
 <ul>
-<li><a href="#org1d9970f">3.1. Algebraic and Geometric Multiplicity of an Eignevalue</a>
+<li><a href="#org38fcef0">3.1. Algebraic and Geometric Multiplicity of an Eignevalue</a>
 <ul>
-<li><a href="#orga49f91d">3.1.1. Algebraic Multiplicity</a></li>
-<li><a href="#orgf059f2e">3.1.2. Geometric Multiplicity</a></li>
+<li><a href="#org303e2f6">3.1.1. Algebraic Multiplicity</a></li>
+<li><a href="#orgdd0d9dc">3.1.2. Geometric Multiplicity</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgf3b395e">4. Diagonalising and Non-Diagonalising Matrix</a>
+<li><a href="#orgd2e8c81">4. Diagonalising and Non-Diagonalising Matrix</a>
 <ul>
-<li><a href="#org95f0cbf">4.1. Diagonalising a Given Matrix</a>
+<li><a href="#org81ab91b">4.1. Diagonalising a Given Matrix</a>
 <ul>
-<li><a href="#org0872d81">4.1.1. (a) Distinct Eigenvalues</a></li>
-<li><a href="#orgd55e73e">4.1.2. (b) Repeated Eigenvalues</a></li>
+<li><a href="#org04b9c78">4.1.1. (a) Distinct Eigenvalues</a></li>
+<li><a href="#org628af2c">4.1.2. (b) Repeated Eigenvalues</a></li>
 </ul>
 </li>
-<li><a href="#orga01f3b8">4.2. Non-Diagonalising Matrix</a></li>
+<li><a href="#org40a6e18">4.2. Non-Diagonalising Matrix</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org73f90af" class="outline-2">
-<h2 id="org73f90af"><span class="section-number-2">1.</span> Eigen values and Eigen vectors</h2>
+<div id="outline-container-org597bf42" class="outline-2">
+<h2 id="org597bf42"><span class="section-number-2">1.</span> Eigen values and Eigen vectors</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Sum of diagonal elements = Sum of eigen values.</li>
 </ul>
 \begin{equation}
-| A - \lambda I | = 0 ... Characteristic Equation \\
+| A - \lambda I | = 0 ... Characteristic Equation
+\end{equation}
+\begin{equation}
 \lambda^3-[sum of diagonal elements]\lambda^2+[sum of minor of diagonal elements]\lambda-|A|=0
 \end{equation}
 \begin{equation}
@@ -298,11 +300,13 @@ gx_1+hx_2+ix_3=0 \\
 \end{equation}
 </div>
 </div>
-<div id="outline-container-org58dd3cc" class="outline-2">
-<h2 id="org58dd3cc"><span class="section-number-2">2.</span> Cayley-Hamilton Theorem</h2>
+<div id="outline-container-orgec53c96" class="outline-2">
+<h2 id="orgec53c96"><span class="section-number-2">2.</span> Cayley-Hamilton Theorem</h2>
 <div class="outline-text-2" id="text-2">
 \begin{equation}
 | A - \lambda I | = 0 ... Characteristic Equation \\
+\end{equation}
+\begin{equation}
 \lambda^3-[sum of diagonal elements]\lambda^2+[sum of minor of diagonal elements]\lambda-|A|=0
 \end{equation}
 <ul class="org-ul">
@@ -314,16 +318,16 @@ elements]A-|A|=0\)
 </p>
 </div>
 </div>
-<div id="outline-container-orgffa52c7" class="outline-2">
-<h2 id="orgffa52c7"><span class="section-number-2">3.</span> Similarity of Matrices</h2>
+<div id="outline-container-org0f39550" class="outline-2">
+<h2 id="org0f39550"><span class="section-number-2">3.</span> Similarity of Matrices</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org1d9970f" class="outline-3">
-<h3 id="org1d9970f"><span class="section-number-3">3.1.</span> Algebraic and Geometric Multiplicity of an Eignevalue</h3>
+<div id="outline-container-org38fcef0" class="outline-3">
+<h3 id="org38fcef0"><span class="section-number-3">3.1.</span> Algebraic and Geometric Multiplicity of an Eignevalue</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-orga49f91d" class="outline-4">
-<h4 id="orga49f91d"><span class="section-number-4">3.1.1.</span> Algebraic Multiplicity</h4>
+<div id="outline-container-org303e2f6" class="outline-4">
+<h4 id="org303e2f6"><span class="section-number-4">3.1.1.</span> Algebraic Multiplicity</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>If an eignevalue &lambda;<sub>1</sub> of matrix <i>A</i> is repeated <i>t</i> times the
@@ -331,8 +335,8 @@ elements]A-|A|=0\)
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf059f2e" class="outline-4">
-<h4 id="orgf059f2e"><span class="section-number-4">3.1.2.</span> Geometric Multiplicity</h4>
+<div id="outline-container-orgdd0d9dc" class="outline-4">
+<h4 id="orgdd0d9dc"><span class="section-number-4">3.1.2.</span> Geometric Multiplicity</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
 <li>If corresponding to an eigenvalue &lambda;<sub>1</sub>, there are <i>s</i> linearly
@@ -343,16 +347,16 @@ multiplicity</b> of &lambda;<sub>1</sub></li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf3b395e" class="outline-2">
-<h2 id="orgf3b395e"><span class="section-number-2">4.</span> Diagonalising and Non-Diagonalising Matrix</h2>
+<div id="outline-container-orgd2e8c81" class="outline-2">
+<h2 id="orgd2e8c81"><span class="section-number-2">4.</span> Diagonalising and Non-Diagonalising Matrix</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org95f0cbf" class="outline-3">
-<h3 id="org95f0cbf"><span class="section-number-3">4.1.</span> Diagonalising a Given Matrix</h3>
+<div id="outline-container-org81ab91b" class="outline-3">
+<h3 id="org81ab91b"><span class="section-number-3">4.1.</span> Diagonalising a Given Matrix</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-org0872d81" class="outline-4">
-<h4 id="org0872d81"><span class="section-number-4">4.1.1.</span> (a) Distinct Eigenvalues</h4>
+<div id="outline-container-org04b9c78" class="outline-4">
+<h4 id="org04b9c78"><span class="section-number-4">4.1.1.</span> (a) Distinct Eigenvalues</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
 <li>If all eignevalues are distinct the matrix is <b>Diagonalisable</b></li>
@@ -371,8 +375,8 @@ then the diagonal matrix <code>D</code> is
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd55e73e" class="outline-4">
-<h4 id="orgd55e73e"><span class="section-number-4">4.1.2.</span> (b) Repeated Eigenvalues</h4>
+<div id="outline-container-org628af2c" class="outline-4">
+<h4 id="org628af2c"><span class="section-number-4">4.1.2.</span> (b) Repeated Eigenvalues</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <ol class="org-ol">
 <li>If an eigenvalue &lambda; is repeated 't' times then its <b>algebraic
@@ -385,8 +389,8 @@ multiplicity</b> is 't'.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orga01f3b8" class="outline-3">
-<h3 id="orga01f3b8"><span class="section-number-3">4.2.</span> Non-Diagonalising Matrix</h3>
+<div id="outline-container-org40a6e18" class="outline-3">
+<h3 id="org40a6e18"><span class="section-number-3">4.2.</span> Non-Diagonalising Matrix</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>If the algebraic multiplicity of &lambda; is <b>not equal</b> the
@@ -398,7 +402,7 @@ geometric multiplicity, then the matrix <code>A</code> is <b>not diagonalisable<
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-05-13 Fri 17:03</p>
+<p class="date">Created: 2022-05-17 Tue 08:56</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

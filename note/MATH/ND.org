@@ -17,14 +17,7 @@ f(x)=e^{{-\frac{1}{2}}\big({\frac{x-m}{\sigma}}\big)^{2}}\frac{1}{\sqrt{2\pi}\si
 Mean=m
 \end{equation}
 *** Variance
-\begin{equation}
-Variance=\sigma^{2}
-\end{equation}
-\begin{equation}
-\nonumber
-\sigma=\sqrt{npq}
-\end{equation}
-\begin{equation}
-\nonumber
-q=1-p
-\end{equation}
+- $Variance=\sigma^{2}$
+- $\sigma=\sqrt{npq}$
+- $q=1-p$
+- $p=\frac{m}{100}$

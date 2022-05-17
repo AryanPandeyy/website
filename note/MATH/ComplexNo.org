@@ -1,3 +1,5 @@
+#+AUTHOR: Aryan Pandey
+#+TITLE: Complex Integration
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../worg.css"/>
 * Cauchy's Integral Thm:-
 - If a complex function f(x) is analytic on a simple closed curve c then
@@ -5,6 +7,11 @@
 \nonumber
 \int_c f(c)dz=0
 \end{equation}
+- NOTE:
+  1. $|Z| = r$ $C(0,0)$ Radius r
+  2. $|Z-a| = r$ $C(a,0)$ Radius r
+  3. $|Z-b| = r$ $C(0,b)$ Radius r
+  4. $|Z-(a+\iota b)| = r$ $C(a,b)$ Radius r
 ** Cauchy's Integral Formula:-
 - If f(x) is an analytic function in a closed curve c and if a any
   point- within c then
@@ -15,5 +22,62 @@ f(a)=\frac{1}{2\pi \imath} \int_c \frac{f(c)}{z-a} dz \\
 - Note:- Differentiate enq(1) w.r.t a partially n times
   both sides
 \begin{equation}
-\int_c \frac{f(x)}{(z-a)^{n+1}}=\frac{2\pi \imath}{n!} f^n(a)
+\int_c \frac{f(x)}{(z-a)^{n}}=\frac{2\pi \imath}{n-1!} f^{n-1}(a)
 \end{equation}
+- First check the denominator and equate it to zero.
+- Match with the constraint and the one who is lying outside, shift it to numerator.
+* Taylor and Laurent Series
+** Taylor Series
+- This expansion is only possible when the function is analytic.
+- $(1+x)^{-1} = 1-x+x^2-x^3$
+- $(1-x)^{-1} = 1+x+x^2+x^3$
+- Make condition equals to =t= for example $z-1=0$ then the condition
+  will be $z-1=t$ and put this equation in the rest of the question
+  replacing the variable with t.
+- Then try to make it such that you can apply the binomial formula.
+** Laurent Series
+- This expansion is also possible when the function is not analytic.
+- Here too binomial formula will be used.
+- Condition will be in the form of less than.
+  - We have to make $z<1$
+  - Example: $1<|Z|<2$ then the condition will be like
+    \begin{equation}
+    1<|Z| \\
+    \therefore \frac{1}{|Z|} < 1
+    \end{equation}
+    \begin{equation}
+    |Z|<2 \\
+    \therefore \frac{|Z|}{2} < 1
+    \end{equation}
+  - Example: $|Z|>2$
+    \begin{equation}
+    2<|Z|
+    \therefore \frac{2}{|Z|} < 1
+    \therefore \frac{1}{|Z|} < 1
+    \end{equation}
+* Cauchy's Residue Theorem
+- Cauchy state that integral of analytic closed curve is zero.
+- But there are some points in the closed curve in which function is
+  *not analytic*. Those points are known as *Poles*.
+- Poles $Z, Z_1,\dots Z_n$
+  \begin{equation}
+  \int_c f(z) \mathrm{d}z=2\pi\iota(R_1+R_2+\dots R_n)
+  \end{equation}
+- NOTE:
+  1. Residue at Simple Pole at $Z=a$
+     \begin{equation}
+     f(x)=\lim\limits_{z \to a} (z-a)f(z)
+     \end{equation}
+  2. Residue at =a= pole of order =n=
+     \begin{equation}
+     Res(at z = a) =\lim\limits_{z \to a} \frac{1}{(n-1)!} \frac{\mathrm d^{n-1}}{\mathrm d z^{n-1}} (z-a)^n f(z)
+     \end{equation}
+  3. Residue at \infty
+     \begin{equation}
+     R=\lim\limits_{z \to \infty} -z f(z)
+     \end{equation}
+- Any question which is been solved by Cauchy's Integral can also be
+  solved with Cauchy's Residue.
+- How to find pole?
+  - Equate denominator to zero and if all the values are distinct then
+    it is a *simple pole* and if two values are *being repeated* then its pole order is 2.

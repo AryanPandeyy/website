@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-16 Sat 11:16 -->
+<!-- 2022-05-17 Tue 08:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nonlinear Programming</title>
@@ -223,24 +223,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org06c94f7">1. NLPP with one equality constraint (two or three variables) using the method of Lagrange’s multipliers</a></li>
-<li><a href="#org97e4b14">2. Kuhn-Tucker with inequality constraint</a>
+<li><a href="#orgcb850c0">1. NLPP with one equality constraint (two or three variables) using the method of Lagrange’s multipliers</a></li>
+<li><a href="#org967d345">2. Kuhn-Tucker with inequality constraint</a>
 <ul>
-<li><a href="#org3ce9149">2.1. Kuhn-Tucker conditions</a></li>
-<li><a href="#orge60d6ab">2.2. Eqn</a>
+<li><a href="#org3323142">2.1. Kuhn-Tucker two variables and one inequality.</a>
 <ul>
-<li><a href="#org8ec561e">2.2.1. Case i) &lambda;=0</a></li>
-<li><a href="#orgaf16a48">2.2.2. Case ii) &lambda;&ne;0</a></li>
+<li><a href="#org2ba5ee2">2.1.1. Kuhn-Tucker conditions</a></li>
+<li><a href="#orge156bcc">2.1.2. Eqn</a></li>
+</ul>
+</li>
+<li><a href="#org6714d94">2.2. Kuhn-Tucker two variables and two inequality.</a>
+<ul>
+<li><a href="#orgd8512d5">2.2.1. Kuhn-Tucker conditions</a></li>
+<li><a href="#orgdb41f39">2.2.2. Eqn</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1df7983">3. <span class="todo TODO">TODO</span> NLPP with two equality constraints</a></li>
+<li><a href="#orgd1bdac1">3. <span class="todo TODO">TODO</span> NLPP with two equality constraints</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org06c94f7" class="outline-2">
-<h2 id="org06c94f7"><span class="section-number-2">1.</span> NLPP with one equality constraint (two or three variables) using the method of Lagrange’s multipliers</h2>
+<div id="outline-container-orgcb850c0" class="outline-2">
+<h2 id="orgcb850c0"><span class="section-number-2">1.</span> NLPP with one equality constraint (two or three variables) using the method of Lagrange’s multipliers</h2>
 <div class="outline-text-2" id="text-1">
 \begin{equation}
 h = constraint
@@ -261,13 +266,17 @@ L(x_{1},x_{2},\lambda) = optimal - \lambda(constraint)
 </ul>
 </div>
 </div>
-<div id="outline-container-org97e4b14" class="outline-2">
-<h2 id="org97e4b14"><span class="section-number-2">2.</span> Kuhn-Tucker with inequality constraint</h2>
+<div id="outline-container-org967d345" class="outline-2">
+<h2 id="org967d345"><span class="section-number-2">2.</span> Kuhn-Tucker with inequality constraint</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org3ce9149" class="outline-3">
-<h3 id="org3ce9149"><span class="section-number-3">2.1.</span> Kuhn-Tucker conditions</h3>
+<div id="outline-container-org3323142" class="outline-3">
+<h3 id="org3323142"><span class="section-number-3">2.1.</span> Kuhn-Tucker two variables and one inequality.</h3>
 <div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org2ba5ee2" class="outline-4">
+<h4 id="org2ba5ee2"><span class="section-number-4">2.1.1.</span> Kuhn-Tucker conditions</h4>
+<div class="outline-text-4" id="text-2-1-1">
 \begin{equation}
 \frac{\mathrm \partial L}{\mathrm \partial x_{1}} = 0
 \end{equation}
@@ -288,35 +297,48 @@ x_1,x_2\geq0
 \end{equation}
 </div>
 </div>
-<div id="outline-container-orge60d6ab" class="outline-3">
-<h3 id="orge60d6ab"><span class="section-number-3">2.2.</span> Eqn</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orge156bcc" class="outline-4">
+<h4 id="orge156bcc"><span class="section-number-4">2.1.2.</span> Eqn</h4>
+<div class="outline-text-4" id="text-2-1-2">
 \begin{equation}
-L(x_1,x_2,\lambda)=optimal-\lambda(constraint) \\
-h=constraint \\
-\frac{\mathrm \partial L}{\mathrm \partial x_1} = 0 => someeqn(1) \\
-\frac{\mathrm \partial L}{\mathrm \partial x_2} = 0 => someeqn(2) \\
-\lambda(h)=0=>\lambda(constraint) ..someeqn(3) \\
+\nonumber
+L(x_1,x_2,\lambda)=optimal-\lambda(constraint)
+\end{equation}
+\begin{equation}
+\nonumber
+h=constraint
+\end{equation}
+\begin{equation}
+\nonumber
+\frac{\mathrm \partial L}{\mathrm \partial x_1} = 0 => someeqn(1)
+\end{equation}
+\begin{equation}
+\nonumber
+\frac{\mathrm \partial L}{\mathrm \partial x_2} = 0 => someeqn(2)
+\end{equation}
+\begin{equation}
+\nonumber
+\lambda(h)=0=>\lambda(constraint) ..someeqn(3)
+\end{equation}
+\begin{equation}
+\nonumber
 h\leq0=>constraint\leq0 ..someeqn(4)
 \end{equation}
 </div>
-<div id="outline-container-org8ec561e" class="outline-4">
-<h4 id="org8ec561e"><span class="section-number-4">2.2.1.</span> Case i) &lambda;=0</h4>
-<div class="outline-text-4" id="text-2-2-1">
+<ol class="org-ol">
+<li><a id="org69b302f"></a>Case i) &lambda;=0<br />
+<div class="outline-text-5" id="text-2-1-2-1">
 <ul class="org-ul">
 <li>put in someeqn(1) &amp; someeqn(2)</li>
 <li>x<sub>1</sub> = &amp; x<sub>2</sub> =</li>
-<li>put it in someeqn(4) &amp; someeqn(5)
-<ul class="org-ul">
-<li>if they satisfiy both the eqn then its right and put x<sub>1</sub> and x<sub>2</sub> in Z</li>
+<li>put x<sub>1</sub> and x<sub>2</sub> in Z</li>
+<li>if $x&ne;0 then the equation is satisfy.</li>
 <li>if not then go for case ii)</li>
-</ul></li>
 </ul>
 </div>
-</div>
-<div id="outline-container-orgaf16a48" class="outline-4">
-<h4 id="orgaf16a48"><span class="section-number-4">2.2.2.</span> Case ii) &lambda;&ne;0</h4>
-<div class="outline-text-4" id="text-2-2-2">
+</li>
+<li><a id="orgc12e277"></a>Case ii) &lambda;&ne;0<br />
+<div class="outline-text-5" id="text-2-1-2-2">
 <ul class="org-ul">
 <li><p>
 from someeqn(3) then
@@ -328,16 +350,126 @@ h = 0 .. someeqn(4)
 <li>x<sub>1</sub> = x<sub>2</sub>= &lambda;=</li>
 </ul>
 </div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6714d94" class="outline-3">
+<h3 id="org6714d94"><span class="section-number-3">2.2.</span> Kuhn-Tucker two variables and two inequality.</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgd8512d5" class="outline-4">
+<h4 id="orgd8512d5"><span class="section-number-4">2.2.1.</span> Kuhn-Tucker conditions</h4>
+<div class="outline-text-4" id="text-2-2-1">
+\begin{equation}
+\frac{\mathrm \partial L}{\mathrm \partial x_{1}} = 0
+\end{equation}
+\begin{equation}
+\frac{\mathrm \partial L}{\mathrm \partial x_{2}} = 0
+\end{equation}
+\begin{equation}
+\lambda_1(h_1)=0
+\end{equation}
+\begin{equation}
+\lambda_2(h_2)=0
+\end{equation}
+\begin{equation}
+h_1\leq0
+\end{equation}
+\begin{equation}
+h_2\leq0
+\end{equation}
+\begin{equation}
+x_1,x_2\geq0
+\end{equation}
+\begin{equation}
+\lambda_1,\lambda_2\geq0
+\end{equation}
+</div>
+</div>
+<div id="outline-container-orgdb41f39" class="outline-4">
+<h4 id="orgdb41f39"><span class="section-number-4">2.2.2.</span> Eqn</h4>
+<div class="outline-text-4" id="text-2-2-2">
+\begin{equation}
+\nonumber
+L(x_1,x_2,\lambda_1,\lambda_2)=optimal-\lambda_1(h_1)-\lambda_2(h_2)
+\end{equation}
+\begin{equation}
+\nonumber
+h_1,h_2=constraint
+\end{equation}
+\begin{equation}
+\nonumber
+\frac{\mathrm \partial L}{\mathrm \partial x_1} = 0 => someeqn(1)
+\end{equation}
+\begin{equation}
+\nonumber
+\frac{\mathrm \partial L}{\mathrm \partial x_2} = 0 => someeqn(2)
+\end{equation}
+\begin{equation}
+\nonumber
+\lambda_1(h_1)=0=>\lambda(constraint) ..someeqn(3)
+\end{equation}
+\begin{equation}
+\nonumber
+\lambda_2(h_2)=0=>\lambda(constraint) ..someeqn(4)
+\end{equation}
+\begin{equation}
+\nonumber
+h_1\leq0=>constraint\leq0 ..someeqn(5)
+\end{equation}
+\begin{equation}
+\nonumber
+h_2\leq0=>constraint\leq0 ..someeqn(6)
+\end{equation}
+</div>
+<ol class="org-ol">
+<li><a id="orgff4dbff"></a>Case 1&gt; &lambda;<sub>1</sub>=0, &lambda;<sub>2</sub>=0<br />
+<div class="outline-text-5" id="text-2-2-2-1">
+<ul class="org-ul">
+<li>Put it in (1) and (2)</li>
+<li>\(x_1 = ? and x_2 = ?\)</li>
+<li>Put it in (5) and (6)</li>
+</ul>
+</div>
+</li>
+<li><a id="org80724ee"></a>Case 2&gt; &lambda;<sub>1</sub>=0, &lambda;<sub>2&ne;0</sub><br />
+<div class="outline-text-5" id="text-2-2-2-2">
+<ul class="org-ul">
+<li>Put it in (1) and (2)</li>
+<li>From (4) someqqn and then solve</li>
+<li>Put it in eqn (5) and (6)</li>
+</ul>
+</div>
+</li>
+<li><a id="orgcb768b5"></a>Case 3&gt; &lambda;<sub>1&ne;0</sub>, &lambda;<sub>2</sub>=0<br />
+<div class="outline-text-5" id="text-2-2-2-3">
+<ul class="org-ul">
+<li>Put it in (1) and (2)</li>
+<li>From (3) someqqn and then solve</li>
+<li>Put it in eqn (5) and (6)</li>
+</ul>
+</div>
+</li>
+<li><a id="org499e05d"></a>Case 4&gt; &lambda;<sub>1&ne;0</sub>, &lambda;<sub>2&ne;0</sub><br />
+<div class="outline-text-5" id="text-2-2-2-4">
+<ul class="org-ul">
+<li>From (3) and (4) some eqn</li>
+<li>put it in (1) and (2)</li>
+</ul>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
-<div id="outline-container-org1df7983" class="outline-2">
-<h2 id="org1df7983"><span class="section-number-2">3.</span> <span class="todo TODO">TODO</span> NLPP with two equality constraints</h2>
+<div id="outline-container-orgd1bdac1" class="outline-2">
+<h2 id="orgd1bdac1"><span class="section-number-2">3.</span> <span class="todo TODO">TODO</span> NLPP with two equality constraints</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-04-16 Sat 11:16</p>
+<p class="date">Created: 2022-05-17 Tue 08:56</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

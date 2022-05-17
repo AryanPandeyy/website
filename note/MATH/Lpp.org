@@ -1,0 +1,12 @@
+* Primal to Dual
+- Optimal equation should be in *Minimize*.
+- $\geq$ should be the sign of all the constraints.
+- Duality:
+  1. $Min\implies Max$
+  2. R.H.S of constraints will be the optimal equation.
+  3. L.H.S of constraints vertically will form new constraints.
+  4. All the $\geq$ will get convert into $\leq$
+  5. $C_j-Z_j$ should be less than or equal to zero then the equation is optimal.
+     1. Select the highest positive number in $C_j-Z_j$ term.
+     2. Minimium ratio will be applied here too.
+     3. Rest all is same.

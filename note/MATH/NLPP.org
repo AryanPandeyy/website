@@ -18,7 +18,8 @@ L(x_{1},x_{2},\lambda) = optimal - \lambda(constraint)
 - \Delta -> positive then maxima
 - \Delta -> negative then minima
 * Kuhn-Tucker with inequality constraint
-** Kuhn-Tucker conditions
+** Kuhn-Tucker two variables and one inequality.
+*** Kuhn-Tucker conditions
 \begin{equation}
 \frac{\mathrm \partial L}{\mathrm \partial x_{1}} = 0
 \end{equation}
@@ -37,26 +38,116 @@ x_1,x_2\geq0
 \begin{equation}
 \lambda\geq0
 \end{equation}
-** Eqn
+*** Eqn
 \begin{equation}
-L(x_1,x_2,\lambda)=optimal-\lambda(constraint) \\
-h=constraint \\
-\frac{\mathrm \partial L}{\mathrm \partial x_1} = 0 => someeqn(1) \\
-\frac{\mathrm \partial L}{\mathrm \partial x_2} = 0 => someeqn(2) \\
-\lambda(h)=0=>\lambda(constraint) ..someeqn(3) \\
+\nonumber
+L(x_1,x_2,\lambda)=optimal-\lambda(constraint)
+\end{equation}
+\begin{equation}
+\nonumber
+h=constraint
+\end{equation}
+\begin{equation}
+\nonumber
+\frac{\mathrm \partial L}{\mathrm \partial x_1} = 0 => someeqn(1)
+\end{equation}
+\begin{equation}
+\nonumber
+\frac{\mathrm \partial L}{\mathrm \partial x_2} = 0 => someeqn(2)
+\end{equation}
+\begin{equation}
+\nonumber
+\lambda(h)=0=>\lambda(constraint) ..someeqn(3)
+\end{equation}
+\begin{equation}
+\nonumber
 h\leq0=>constraint\leq0 ..someeqn(4)
 \end{equation}
-*** Case i) \lambda=0
+**** Case i) \lambda=0
 - put in someeqn(1) & someeqn(2)
 - x_1 = & x_2 = 
-- put it in someeqn(4) & someeqn(5)
-  - if they satisfiy both the eqn then its right and put x_1 and x_2 in Z
-  - if not then go for case ii)
-*** Case ii) \lambda\neq0
+- put x_1 and x_2 in Z
+- if $x\neq0 then the equation is satisfy.
+- if not then go for case ii)
+**** Case ii) \lambda\neq0
 - from someeqn(3) then
   \begin{equation}
   h = 0 .. someeqn(4)
   \end{equation}
 - solve someeqn(1),(2),(4)
 - x_1 = x_2= \lambda=
+** Kuhn-Tucker two variables and two inequality.
+*** Kuhn-Tucker conditions
+\begin{equation}
+\frac{\mathrm \partial L}{\mathrm \partial x_{1}} = 0
+\end{equation}
+\begin{equation}
+\frac{\mathrm \partial L}{\mathrm \partial x_{2}} = 0
+\end{equation}
+\begin{equation}
+\lambda_1(h_1)=0
+\end{equation}
+\begin{equation}
+\lambda_2(h_2)=0
+\end{equation}
+\begin{equation}
+h_1\leq0
+\end{equation}
+\begin{equation}
+h_2\leq0
+\end{equation}
+\begin{equation}
+x_1,x_2\geq0
+\end{equation}
+\begin{equation}
+\lambda_1,\lambda_2\geq0
+\end{equation}
+*** Eqn
+\begin{equation}
+\nonumber
+L(x_1,x_2,\lambda_1,\lambda_2)=optimal-\lambda_1(h_1)-\lambda_2(h_2)
+\end{equation}
+\begin{equation}
+\nonumber
+h_1,h_2=constraint
+\end{equation}
+\begin{equation}
+\nonumber
+\frac{\mathrm \partial L}{\mathrm \partial x_1} = 0 => someeqn(1)
+\end{equation}
+\begin{equation}
+\nonumber
+\frac{\mathrm \partial L}{\mathrm \partial x_2} = 0 => someeqn(2)
+\end{equation}
+\begin{equation}
+\nonumber
+\lambda_1(h_1)=0=>\lambda(constraint) ..someeqn(3)
+\end{equation}
+\begin{equation}
+\nonumber
+\lambda_2(h_2)=0=>\lambda(constraint) ..someeqn(4)
+\end{equation}
+\begin{equation}
+\nonumber
+h_1\leq0=>constraint\leq0 ..someeqn(5)
+\end{equation}
+\begin{equation}
+\nonumber
+h_2\leq0=>constraint\leq0 ..someeqn(6)
+\end{equation}
+**** Case 1> \lambda_1=0, \lambda_2=0
+- Put it in (1) and (2)
+- $x_1 = ? and x_2 = ?$
+- Put it in (5) and (6)
+**** Case 2> \lambda_1=0, \lambda_2\neq0
+- Put it in (1) and (2)
+- From (4) someqqn and then solve
+- Put it in eqn (5) and (6)
+**** Case 3> \lambda_1\neq0, \lambda_2=0
+- Put it in (1) and (2)
+- From (3) someqqn and then solve
+- Put it in eqn (5) and (6)
+**** Case 4> \lambda_1\neq0, \lambda_2\neq0
+- From (3) and (4) some eqn
+- put it in (1) and (2)
 * TODO NLPP with two equality constraints

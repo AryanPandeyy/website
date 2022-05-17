@@ -3,11 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-17 Tue 08:56 -->
+<!-- 2022-05-17 Tue 07:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Complex Integration</title>
-<meta name="author" content="Aryan Pandey" />
+<title>&lrm;</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -193,7 +192,6 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
 </style>
-<link rel="stylesheet" type="text/css" href="../../worg.css"/>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -218,170 +216,39 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Complex Integration</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf6e09c5">1. Cauchy's Integral Thm:-</a>
-<ul>
-<li><a href="#org3a294a2">1.1. Cauchy's Integral Formula:-</a></li>
-</ul>
-</li>
-<li><a href="#orgcd1e49a">2. Taylor and Laurent Series</a>
-<ul>
-<li><a href="#org1f2add1">2.1. Taylor Series</a></li>
-<li><a href="#org7d9f173">2.2. Laurent Series</a></li>
-</ul>
-</li>
-<li><a href="#org0c53a14">3. Cauchy's Residue Theorem</a></li>
+<li><a href="#org77cd6a8">1. Primal to Dual</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf6e09c5" class="outline-2">
-<h2 id="orgf6e09c5"><span class="section-number-2">1.</span> Cauchy's Integral Thm:-</h2>
+<div id="outline-container-org77cd6a8" class="outline-2">
+<h2 id="org77cd6a8"><span class="section-number-2">1.</span> Primal to Dual</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li>If a complex function f(x) is analytic on a simple closed curve c then</li>
-</ul>
-\begin{equation}
-\nonumber
-\int_c f(c)dz=0
-\end{equation}
-<ul class="org-ul">
-<li>NOTE:
+<li>Optimal equation should be in <b>Minimize</b>.</li>
+<li>\(\geq\) should be the sign of all the constraints.</li>
+<li>Duality:
 <ol class="org-ol">
-<li>\(|Z| = r\) \(C(0,0)\) Radius r</li>
-<li>\(|Z-a| = r\) \(C(a,0)\) Radius r</li>
-<li>\(|Z-b| = r\) \(C(0,b)\) Radius r</li>
-<li>\(|Z-(a+\iota b)| = r\) \(C(a,b)\) Radius r</li>
-</ol></li>
-</ul>
-</div>
-<div id="outline-container-org3a294a2" class="outline-3">
-<h3 id="org3a294a2"><span class="section-number-3">1.1.</span> Cauchy's Integral Formula:-</h3>
-<div class="outline-text-3" id="text-1-1">
-<ul class="org-ul">
-<li>If f(x) is an analytic function in a closed curve c and if a any
-point- within c then</li>
-</ul>
-\begin{equation}
-f(a)=\frac{1}{2\pi \imath} \int_c \frac{f(c)}{z-a} dz \\
-\therefore \int_c \frac{f(c)}{z-a}dz=2\pi \imath f(a)
-\end{equation}
-<ul class="org-ul">
-<li>Note:- Differentiate enq(1) w.r.t a partially n times
-both sides</li>
-</ul>
-\begin{equation}
-\int_c \frac{f(x)}{(z-a)^{n}}=\frac{2\pi \imath}{n-1!} f^{n-1}(a)
-\end{equation}
-<ul class="org-ul">
-<li>First check the denominator and equate it to zero.</li>
-<li>Match with the constraint and the one who is lying outside, shift it to numerator.</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orgcd1e49a" class="outline-2">
-<h2 id="orgcd1e49a"><span class="section-number-2">2.</span> Taylor and Laurent Series</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-org1f2add1" class="outline-3">
-<h3 id="org1f2add1"><span class="section-number-3">2.1.</span> Taylor Series</h3>
-<div class="outline-text-3" id="text-2-1">
-<ul class="org-ul">
-<li>This expansion is only possible when the function is analytic.</li>
-<li>\((1+x)^{-1} = 1-x+x^2-x^3\)</li>
-<li>\((1-x)^{-1} = 1+x+x^2+x^3\)</li>
-<li>Make condition equals to <code>t</code> for example \(z-1=0\) then the condition
-will be \(z-1=t\) and put this equation in the rest of the question
-replacing the variable with t.</li>
-<li>Then try to make it such that you can apply the binomial formula.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org7d9f173" class="outline-3">
-<h3 id="org7d9f173"><span class="section-number-3">2.2.</span> Laurent Series</h3>
-<div class="outline-text-3" id="text-2-2">
-<ul class="org-ul">
-<li>This expansion is also possible when the function is not analytic.</li>
-<li>Here too binomial formula will be used.</li>
-<li>Condition will be in the form of less than.
-<ul class="org-ul">
-<li>We have to make \(z<1\)</li>
-<li><p>
-Example: \(1<|Z|<2\) then the condition will be like
-</p>
-\begin{equation}
-1<|Z| \\
-\therefore \frac{1}{|Z|} < 1
-\end{equation}
-\begin{equation}
-|Z|<2 \\
-\therefore \frac{|Z|}{2} < 1
-\end{equation}</li>
-<li><p>
-Example: \(|Z|>2\)
-</p>
-\begin{equation}
-2<|Z|
-\therefore \frac{2}{|Z|} < 1
-\therefore \frac{1}{|Z|} < 1
-\end{equation}</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org0c53a14" class="outline-2">
-<h2 id="org0c53a14"><span class="section-number-2">3.</span> Cauchy's Residue Theorem</h2>
-<div class="outline-text-2" id="text-3">
-<ul class="org-ul">
-<li>Cauchy state that integral of analytic closed curve is zero.</li>
-<li>But there are some points in the closed curve in which function is
-<b>not analytic</b>. Those points are known as <b>Poles</b>.</li>
-<li><p>
-Poles \(Z, Z_1,\dots Z_n\)
-</p>
-\begin{equation}
-\int_c f(z) \mathrm{d}z=2\pi\iota(R_1+R_2+\dots R_n)
-\end{equation}</li>
-<li>NOTE:
+<li>\(Min\implies Max\)</li>
+<li>R.H.S of constraints will be the optimal equation.</li>
+<li>L.H.S of constraints vertically will form new constraints.</li>
+<li>All the \(\geq\) will get convert into \(\leq\)</li>
+<li>\(C_j-Z_j\) should be less than or equal to zero then the equation is optimal.
 <ol class="org-ol">
-<li><p>
-Residue at Simple Pole at \(Z=a\)
-</p>
-\begin{equation}
-f(x)=\lim\limits_{z \to a} (z-a)f(z)
-\end{equation}</li>
-<li><p>
-Residue at <code>a</code> pole of order <code>n</code>
-</p>
-\begin{equation}
-Res(at z = a) =\lim\limits_{z \to a} \frac{1}{(n-1)!} \frac{\mathrm d^{n-1}}{\mathrm d z^{n-1}} (z-a)^n f(z)
-\end{equation}</li>
-<li><p>
-Residue at &infin;
-</p>
-\begin{equation}
-R=\lim\limits_{z \to \infty} -z f(z)
-\end{equation}</li>
+<li>Select the highest positive number in \(C_j-Z_j\) term.</li>
+<li>Minimium ratio will be applied here too.</li>
+<li>Rest all is same.</li>
 </ol></li>
-<li>Any question which is been solved by Cauchy's Integral can also be
-solved with Cauchy's Residue.</li>
-<li>How to find pole?
-<ul class="org-ul">
-<li>Equate denominator to zero and if all the values are distinct then
-it is a <b>simple pole</b> and if two values are <b>being repeated</b> then its pole order is 2.</li>
-</ul></li>
+</ol></li>
 </ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Aryan Pandey</p>
-<p class="date">Created: 2022-05-17 Tue 08:56</p>
+<p class="date">Created: 2022-05-17 Tue 07:38</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
